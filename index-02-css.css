@@ -1,0 +1,157 @@
+h1, h2, h3, h4, h5, h6, p,span{
+    font-family: 'Noto Sans TC', sans-serif;
+    letter-spacing: 0.3rem;
+}
+body{
+    padding: 0;
+}
+
+.lineheight{
+    line-height: 2rem;
+}
+.lineheight2{
+    line-height: 3rem;
+}
+
+.h4-style{
+    color: rgb(168, 168, 168);
+    border-bottom: 1px solid rgb(168, 168, 168);
+    padding-bottom: 2rem;
+}
+
+/* -----body------------------------------ */
+
+.logo{
+    width: 10%;
+}
+
+.navbar ul a{
+   
+    color: rgb(107, 107, 107);
+    padding: 2rem;
+}
+
+.title{
+    margin: 3rem auto 0;
+    text-align: center;
+}
+
+.fa-map-marker-alt{
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.carousell ul{
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+}
+.photo-demo li{
+    width: 100%;
+    flex-shrink:0;
+}
+
+/* ----------------surrounding----------------------- */
+.map-title p{
+    position: relative;
+}
+.map-title p::after{
+    display: inline;
+    border-top: 1px solid rgb(92, 92, 92);
+    content: ' ';
+    top: 10px;
+    right: 15px;    
+    position: absolute;
+    width: 50%;
+}
+
+.surrounding .imgwrap ,.map-focus .imgwrap {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.imgwrap img{
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#surrounding-day{
+    z-index: 2;
+}
+
+
+.pick-zone::before{
+    content: '';
+    display:inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #CAFFAA;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+/* -----------------map-focus-------------------- */
+
+.focus-title p{
+    position: relative;
+}
+.focus-title p::after{
+    display: inline;
+    border-top: 1px solid rgb(92, 92, 92);
+    content: ' ';
+    top: 10px;
+    right: 25%;    
+    position: absolute;
+    width: 80%;
+}
+
+.focus-pick-zone::before{
+    content: '';
+    display:inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #96EF5F;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.bgc-day{
+    background-color: #FFFEF4;
+}
+
+.bgc-night{
+    background-color: #666699;
+}
+
+/* -----------------footer-------------------- */
+
+footer{
+    height:50%;
+    background-color: rgb(214, 214, 214);
+    position: relative;
+}
+
+.footer ul a, 
+.footer h5 a{
+    color: rgb(107, 107, 107);
+    padding-left: 2rem;
+}
+.footer h5{
+    position: absolute;
+    bottom: 15%;
+    right: 10px;
+    font-size: 1.5rem;
+    font-weight: 400;
+    transform: rotate(-90deg);
+}
+.footer h5::after{
+    content: "";
+            display:inline-block;
+            width: 20%;
+            height: 5px;
+            background-color: rgb(201, 255, 121);
+            /* transform: translateX(100px); */
+}

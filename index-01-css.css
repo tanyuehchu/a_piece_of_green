@@ -1,0 +1,268 @@
+
+h1, h2, h3, h4, h5, h6, p,span{
+    font-family: 'Noto Sans TC', sans-serif;
+    letter-spacing: 0.3rem;
+}
+body{
+    padding: 0;
+}
+
+.lineheight{
+    line-height: 2rem;
+}
+.lineheight2{
+    line-height: 3rem;
+}
+/* ------------------body---------------------- */
+
+.logo{
+    width: 100px;
+}
+
+.navbar ul a{
+   
+    color: rgb(107, 107, 107);
+    padding: 2rem;
+}
+
+.imgwrap{
+    position: relative;
+}
+
+
+
+
+.wordwrap{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 1px dashed rgb(138, 255, 127);
+    position: absolute;
+    top: 0;
+}
+.wordwrap h1{
+    line-height: 3rem;
+}
+
+@media (max-width:576px) {
+    .wordwrap{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    /* background-color: royalblue; */
+    border: 1px dashed rgb(36, 230, 19);
+    position: absolute;
+    top: 0;
+    }
+    .wordwrap h1,.wordwrap h3{
+        line-height: 1.5rem;
+        font-size: 1rem;
+    }
+ 
+}
+
+.icondown{
+    width: 30px;
+}
+
+/* ------------------section----------------- */
+
+.text h5{
+    color:rgb(168, 168, 168);
+    margin-bottom: 3rem;
+}
+
+.number{
+    font-size: 3rem;
+    font-weight: 800;
+}
+.fas{
+    font-size: 1.5rem;
+    padding: 1.5rem;
+}
+.lightgreen{
+    color: #96EF5F;
+}
+
+/* ---------------------spring----------------- */
+
+.springbase{
+    position: relative;
+    border-radius: 80px;
+    background-color: #FFFAFF;
+    margin-top: 5rem;
+}
+
+.springtitle{
+    padding: 2rem;
+    border-radius: 0 100px 0px 100px;
+    background-image: linear-gradient(to bottom,#FFF2FF 30%, #81FFC0);
+    position: absolute;
+    top: -50px;
+    left: 0;
+    box-shadow: 0 5px 30px 0 rgb(0 0 0 / 15%);
+}
+
+.springcard .imgwrap{
+    border-radius: 150px 0px 150px 0px;
+    overflow: hidden;
+}
+
+
+
+.ellipsis{
+    font-size: 14px;
+    box-sizing:border-box;
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+}
+
+/* ----------------------summer------------------------ */
+
+.summerbase{
+    position: relative;
+    border-radius: 80px;
+    background-color: #F2FEFF;
+    margin-top: 4rem;
+}
+
+.summertitle{
+    padding: 2rem;
+    border-radius: 100px 0px 100px 0px;
+    background-image: linear-gradient(to bottom,#FFFFE3 30%, #81FFFF);
+    position: absolute;
+    top: -50px;
+    right: 0;
+    box-shadow: 0 5px 30px 0 rgb(0 0 0 / 15%);
+}
+
+.summercard .imgwrap{
+    border-radius: 0px 150px 0px 150px;
+    overflow: hidden;
+}
+
+
+/* ----------------------foodintro------------------ */
+.foodcard .imgwrap{
+    overflow: hidden;
+    border-radius: 100px 0 0 0;
+}
+
+
+.foodcard h6{
+    margin-top: 1.5rem;
+    position: relative;
+}
+.foodcard h6::after{
+    display: inline;
+    border: 1px solid rgb(92, 92, 92);
+    content: ' ';
+    height: 0;
+    top: 10px;
+    right: 15px;    
+    position: absolute;
+    width: 50%;
+} 
+/* --------------------food-demo------------------- */
+
+.foodwrap .foodchange{
+    width: 50%;
+    position: relative;
+    z-index: 10;
+}
+
+.foodchange li{
+    width: 100%;
+    border-radius: 0 0 0 100px;
+    overflow: hidden;
+}
+
+.foodchange img{
+    width: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+.foodchange:nth-child(1){
+    z-index: 5;
+}
+.foodchange:nth-child(2){
+    z-index: 4;
+}
+.foodchange:nth-child(3){
+    z-index: 3;
+}
+.foodchange:nth-child(4){ 
+    z-index: 2;
+}
+.foodchange:nth-child(5){
+    z-index: 1;
+}
+
+.foodtext li{
+    margin: 3rem 0;
+    position: relative;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 300;
+    border-bottom: 1px solid #ccc;
+    padding: 15px;
+}
+
+.foodtext li::before{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: '';
+    width: 40%;
+    border-bottom: 1px solid rgb(0, 0, 0);
+
+
+}
+.foodtext li a{
+   margin: 0 2rem;
+    font-size: 25px;
+    font-weight: 500;
+    text-decoration: none;
+    color: black;
+}
+
+/* -------------------footer------------------ */
+footer{
+    height:50%;
+    background-color: rgb(214, 214, 214);
+    position: relative;
+}
+
+.footer ul a, 
+.footer h5 a{
+    color: rgb(107, 107, 107);
+    padding-left: 2rem;
+}
+
+
+
+.footer h5{
+    position: absolute;
+    bottom: 15%;
+    right: 10px;
+    font-size: 1.5rem;
+    font-weight: 400;
+    transform: rotate(-90deg);
+}
+.footer h5::after{
+    content: "";
+            display:inline-block;
+            width: 20%;
+            height: 5px;
+            background-color: rgb(201, 255, 121);
+            /* transform: translateX(100px); */
+}
+
+
+
