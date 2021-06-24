@@ -25,7 +25,7 @@
             <div class="logo">
                 <img class="w-100" src="./SVG/logo.svg" alt="">
             </div>
-            <div class="navbar ml-auto d-sm-none d-md-inline">
+            <div class="navbar ml-auto d-none d-md-inline">
                 <ul class="list-unstyled d-flex text-decoration-none mb-0">
                     <li><a href="">News</a></li>
                     <li><a href="">找公園</a></li>
@@ -34,7 +34,7 @@
                     <li><a href=""><i class="fas fa-search p-0"></i></a></li>
                 </ul>
             </div>
-            <div class="list d-sm-inline d-md-none">
+            <div class="list d-inline d-md-none">
                 <i class="fas fa-stream"></i>
             </div>
         </nav>
@@ -52,40 +52,48 @@
 
         </div>
 
-        <div class="row season justify-content-between align-items-center mt-5">
-            <div class="col-6">
+        <div class="row season justify-content-center justify-content-md-between  align-items-center mt-5">
+            <div class="col-12 col-md-6 mt-md-5">
                 <img class="w-100" src="./img/season.png" alt="">
             </div>
-            <div class="col-6 text">
-                <h5 class="lineheight">2016年，台北市實行Re-create Taipei 臺北鄰里公園翻轉計畫，同時間新增規劃了150+處公園綠地。</h5>
+            <div class="col-12 col-md-6  text">
+                <h5 class="lineheight mt-3 mt-md-0">2016年，台北市實行Re-create Taipei 臺北鄰里公園翻轉計畫，同時間新增規劃了150+處公園綠地。</h5>
                 <h4>直至2021年統計台北市的公園增加了</h4>
-                <span class="number lightgreen">1,130</span><i class="fas fa-plus lightgreen"></i>
-                <h4 class="mt-3">每年內在台北大型公園舉辦的活動至少</h4>
-                <span class="number lightgreen">800</span>
-                <i class="fas fa-plus lightgreen"></i>
+                <div class="numberwrap"><span class="number lightgreen">1,130</span><i
+                        class="fas fa-plus lightgreen"></i></div>
+                <h4 class="mt-md-3">每年內在台北大型公園舉辦的活動至少</h4>
+                <div class="numberwrap">
+                    <span class="number lightgreen">800</span>
+                    <i class="fas fa-plus lightgreen"></i>
+                </div>
             </div>
         </div>
 
-        <h1 class="my-5 pt-5">Seasons x Parks</h1>
-        <h4>四季的台北公園</h4>
+        <div class="maintitle">
+            <h1 class="my-5 pt-5">Seasons x Parks</h1>
+            <h4>四季的台北公園</h4>
+        </div>
 
     </div>
     <div class="container springbase">
         <div class="row justify-content-end mt-5">
-            <div class="springtitle col-5 text-center">
+            <div class="springtitle col-1 d-none d-md-block col-md-5 text-center">
                 <h1>春</h1>
                 <h2 class="text-light">Spring</h2>
                 <h4 class="text-light">Jan - Apr</h4>
             </div>
-            <div class="springword col-5 mt-4 text-center">
+            <div class="springtitle-sm d-md-none d-block col-1 col-md-5">
+                <h3>春</h3>
+            </div>
+            <div class="springword  col-md-5 mt-4 text-center">
                 <h4 class="lineheight">春天裡的公園 <br> 有什麼有趣的活動呢?
                 </h4>
-                <h5 class="mt-5 lineheight">台北的春天，有點冷又不太冷，是個適合散步,賞花,野餐,出外走走的季節。
+                <h5 class="mt-5 lineheight text-left text-md-center">台北的春天，有點冷又不太冷，是個適合散步,賞花,野餐,出外走走的季節。
                 </h5>
             </div>
         </div>
         <div class="row justify-content-between mt-5">
-            <div class="col springcard text-center pt-5">
+            <div class="col-6 col-md springcard text-center pt-3 pt-md-5">
                 <div class="imgwrap"><a href=""><img class="w-100" src="./img/spring-1.jpg" alt=""></a></div>
                 <h6 class="mt-4">陽明山國家公園</h6>
                 <h6 class="mb-4">櫻花季</h6>
@@ -93,7 +101,7 @@
                     每年吸引百萬以上花迷前來朝聖的陽明山花季，花季主要景點為陽明公園、花卉試驗中心等地，美麗的陽明山擁有豐富多元的生態資源及歷史文化，走進陽明山如同進入一本內容豐富色彩鮮艷的童話故事書，其中有八重櫻、昭和櫻、吉野櫻、平戶杜鵑等花卉上陣，在週末濛濛小雨、充滿大自然芬多精的氛圍中，讓陽明山花季更添意境。
                 </p>
             </div>
-            <div class="col springcard text-center pt-5">
+            <div class="col-6 col-md springcard text-center pt-3 pt-md-5">
                 <div class="imgwrap"><a href=""><img class="w-100" src="./img/spring-2.jpg" alt=""></a></div>
                 <h6 class="mt-4">大安森林公園</h6>
                 <h6 class="mb-4">台北杜鵑花音樂會</h6>
@@ -101,7 +109,7 @@
                     2021台北杜鵑花季主場活動-杜鵑花音樂會於今日下午2時至5時在大安森林公園熱鬧登場，今年將大安森林公園打造成「熊讚的杜鵑花園」，在公園內隨處可見粉嫩杜鵑花熊讚裝置穿梭在花叢間，活動只到3月底，鼓勵民眾走出戶外欣賞並享受在春日裡百花爭妍的美景，一起約定來場杜鵑花之旅吧！
                 </p>
             </div>
-            <div class="col springcard text-center pt-5">
+            <div class="col-6 col-md springcard text-center pt-3 pt-md-5">
                 <div class="imgwrap"><a href=""><img class="w-100" src="./img/spring-5.jpg" alt=""></a></div>
                 <h6 class="mt-4">華山公園</h6>
                 <h6 class="mb-4">春漾市集</h6>
@@ -113,22 +121,26 @@
 
         </div>
     </div>
+
     <div class="container summerbase">
         <div class="row justify-content-end flex-row-reverse">
-            <div class="summertitle col-5 text-center">
+            <div class="summertitle col-5 text-center d-none d-md-block">
                 <h1>夏</h1>
                 <h2 class="text-light">Summer</h2>
                 <h4 class="text-light">May-Aug</h4>
             </div>
-            <div class="springword col-5 mt-4 text-center">
+            <div class="summertitle-sm d-block d-md-none col-md-5 col-1 text-center">
+                <h3>夏</h3>
+            </div>
+            <div class="springword col-md-5 col-12 mt-4 text-center">
                 <h4 class="lineheight2">炎熱的台北夏天 <br> 玩水主題的公園在這裡！
                 </h4>
-                <h5 class="mt-5 lineheight">台北的夏天，有點冷又不太冷，是個適合散步,賞花,野餐,出外走走的季節。
+                <h5 class="mt-5 lineheight text-left text-md-center">台北的夏天，有點冷又不太冷，是個適合散步,賞花,野餐,出外走走的季節。
                 </h5>
             </div>
         </div>
         <div class="row justify-content-between mt-5">
-            <div class="col summercard text-center pt-5">
+            <div class="col-md col-6 summercard text-center pt-5">
                 <div class="imgwrap"><a href=""><img class="w-100" src="./img/summer-2.jpg" alt=""></a></div>
                 <h6 class="mt-4">陽明山國家公園</h6>
                 <h6 class="mb-4">櫻花季</h6>
@@ -136,7 +148,7 @@
                     每年吸引百萬以上花迷前來朝聖的陽明山花季，花季主要景點為陽明公園、花卉試驗中心等地，美麗的陽明山擁有豐富多元的生態資源及歷史文化，走進陽明山如同進入一本內容豐富色彩鮮艷的童話故事書，其中有八重櫻、昭和櫻、吉野櫻、平戶杜鵑等花卉上陣，在週末濛濛小雨、充滿大自然芬多精的氛圍中，讓陽明山花季更添意境。
                 </p>
             </div>
-            <div class="col summercard text-center pt-5">
+            <div class="col-md col-6 summercard text-center pt-5">
                 <div class="imgwrap"><a href=""><img class="w-100" src="./img/summer-6.jpg" alt=""></a></div>
                 <h6 class="mt-4">大安森林公園</h6>
                 <h6 class="mb-4">台北杜鵑花音樂會</h6>
@@ -144,7 +156,7 @@
                     2021台北杜鵑花季主場活動-杜鵑花音樂會於今日下午2時至5時在大安森林公園熱鬧登場，今年將大安森林公園打造成「熊讚的杜鵑花園」，在公園內隨處可見粉嫩杜鵑花熊讚裝置穿梭在花叢間，活動只到3月底，鼓勵民眾走出戶外欣賞並享受在春日裡百花爭妍的美景，一起約定來場杜鵑花之旅吧！
                 </p>
             </div>
-            <div class="col springcard text-center pt-5">
+            <div class="col-md col-6 springcard text-center pt-5">
                 <div class="imgwrap"><a href=""><img class="w-100" src="./img/summer-8.jpg" alt=""></a></div>
                 <h6 class="mt-4">華山公園</h6>
                 <h6 class="mb-4">春漾市集</h6>
@@ -160,8 +172,10 @@
     </div>
     <div class="container">
         <div class="foodintro text-center">
-            <h1>Foods x Parks</h1>
-            <h4 class="my-5">公園周遭的著名美食</h4>
+            <div class="maintitle mt-5">
+                <h1>Foods x Parks</h1>
+                <h4 class="my-5">公園周遭的著名美食</h4>
+            </div>
             <div class="row mt-5">
                 <div class="col foodcard text-left mt-3">
                     <div class="imgwrap"><img class="w-100" src="./img/food-intro-1.jpg" alt=""></div>

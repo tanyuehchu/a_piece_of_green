@@ -44,25 +44,10 @@ body{
     line-height: 3rem;
 }
 
-@media (max-width:576px) {
-    .wordwrap{
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    /* background-color: royalblue; */
-    border: 1px dashed rgb(36, 230, 19);
-    position: absolute;
-    top: 0;
-    }
-    .wordwrap h1,.wordwrap h3{
-        line-height: 1.5rem;
-        font-size: 1rem;
-    }
- 
-}
+
 
 .icondown{
-    width: 30px;
+    width: 1.5rem;
 }
 
 /* ------------------section----------------- */
@@ -103,8 +88,17 @@ body{
     box-shadow: 0 5px 30px 0 rgb(0 0 0 / 15%);
 }
 
+.springtitle-sm{
+    padding: 2rem;
+    background-image: linear-gradient(to bottom,#FFF2FF 30%, #81FFC0);
+    position: absolute;
+    top: -50px;
+    left: 0;
+    box-shadow: 0 5px 30px 0 rgb(0 0 0 / 15%);
+}
+
 .springcard .imgwrap{
-    border-radius: 150px 0px 150px 0px;
+    border-radius: 35% 0px 35% 0px;
     overflow: hidden;
 }
 
@@ -141,8 +135,17 @@ body{
     box-shadow: 0 5px 30px 0 rgb(0 0 0 / 15%);
 }
 
+.summertitle-sm{
+    padding: 2rem;
+    background-image: linear-gradient(to bottom,#FFFFE3 30%, #81FFFF);
+    position: absolute;
+    top: -50px;
+    right: 0;
+    box-shadow: 0 5px 30px 0 rgb(0 0 0 / 15%);
+}
+
 .summercard .imgwrap{
-    border-radius: 0px 150px 0px 150px;
+    border-radius: 0px 35% 0px 35%;
     overflow: hidden;
 }
 
@@ -150,7 +153,7 @@ body{
 /* ----------------------foodintro------------------ */
 .foodcard .imgwrap{
     overflow: hidden;
-    border-radius: 100px 0 0 0;
+    border-radius: 20% 0 0 0;
 }
 
 
@@ -230,6 +233,41 @@ body{
     font-weight: 500;
     text-decoration: none;
     color: black;
+}
+
+@media (max-width:768px) {
+    .wordwrap{
+    border:none;
+    position: absolute;
+    top: -50px;
+    }
+    .wordwrap h1,.wordwrap h3{
+        line-height: 1.5rem;
+        font-size: 1rem;
+    }
+    .season h5,.season h4{
+        padding: 20px;
+        font-size: 1rem;
+        line-height: 2rem;
+        margin-bottom: 0;
+    }
+    .numberwrap{
+        border-bottom: 1px solid #ccc;
+    }
+    .ellipsis{
+        font-size: 14px;
+        box-sizing:border-box;
+        overflow:hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        white-space: normal;
+    }
+    .springcard h6,.summercard h6{
+        font-size: 1.2rem;
+    }
 }
 
 /* -------------------footer------------------ */
