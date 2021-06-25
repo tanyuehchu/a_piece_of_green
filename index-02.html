@@ -16,11 +16,11 @@
 
 <body class="bgc-day">
     <div class="container section-1">
-        <nav class="d-flex align-items-center p-2">
+        <nav class="d-flex justify-content-between align-items-center p-2">
             <div class="logo">
-                <img class="w-100" src="./SVG/logo.svg" alt="">
+                <img class="w-100" src="./SVG/logo_1.svg" alt="">
             </div>
-            <div class="navbar ml-auto ">
+            <div class="navbar ml-auto d-none d-md-inline">
                 <ul class="list-unstyled d-flex text-decoration-none mb-0">
                     <li><a href="">News</a></li>
                     <li><a href="">找公園</a></li>
@@ -28,6 +28,9 @@
                     <li><a href="">美食 x 公園</a></li>
                     <li><a href=""><i class="fas fa-search p-0"></i></a></li>
                 </ul>
+            </div>
+            <div class="list d-inline d-md-none">
+                <i class="fas fa-stream"></i>
             </div>
         </nav>
         <div class="title">
@@ -57,6 +60,13 @@
                 <li><a href=""><img class="w-100" src="./img/banner-3.jpg" alt=""></a></li>
                 <li><a href=""><img class="w-100" src="./img/banner-4.jpg" alt=""></a></li>
                 <li><a href=""><img class="w-100" src="./img/banner-5.jpg" alt=""></a></li>
+            </ul>
+            <ul class="list-unstyled slider-dots d-flex">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
             </ul>
         </div>
 
@@ -99,12 +109,12 @@
             <h3 class="lineheight2">公園裡面</h3>
             <p>看看公園裡面有什麼</p>
         </div>
-        <div class="row map-focus bgc-day justify-content-center my-5">
+        <div class="row map-focus bgc-day justify-content-between my-5">
             <div class="imgwrap col-12 col-md-5">
                 <img id="focus-day" class="w-100" src="./img/map-focus-07.jpg" alt="">
                 <img id="focus-night" class="w-100" src="./img/map-focus-08.jpg" alt="">
             </div>
-            <ul class="col-md-3 col-12 list-unstyled ml-4">
+            <ul class="pick_wrap d-flex flex-wrap justify-content-between col-md-6 col-12 list-unstyled ml-4">
                 <li class="pick-zone text-left ml-5 pt-3">
                     <h5>周邊美食</h5>
                     <p>周邊四星以上餐廳</p>

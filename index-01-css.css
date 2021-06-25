@@ -19,7 +19,7 @@ body{
     width: 100px;
 }
 
-.navbar ul a{
+.navbar a{
    
     color: rgb(107, 107, 107);
     padding: 2rem;
@@ -46,9 +46,19 @@ body{
 
 
 
-.icondown{
-    width: 1.5rem;
-}
+.banner .explore {
+    margin: 3rem 0;
+    font-size: 3px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  .banner .explore:after {
+    display: block;
+    content: "⇓";
+  }
+  .banner .explore:hover {
+    color: #CAFFAA ;
+  }
 
 /* ------------------section----------------- */
 
@@ -174,39 +184,45 @@ body{
 } 
 /* --------------------food-demo------------------- */
 
-.foodwrap .foodchange{
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
 
-.foodchange li{
+.foodwrap .foodchange {
+    width: 100%;
+    position: relative;
+    min-height: 600px;
+    /* u因為position使父層高度消失，
+    所以用最小高度（＝圖片高度解決）
+    min-height: calc(100% - 圖片高度)
+    */
+  }
+  
+  .foodchange li {
     width: 100%;
     border-radius: 0 0 0 100px;
     overflow: hidden;
-}
-
-.foodchange img{
-    width: 100%;
     position: absolute;
     top: 0%;
     left: 0%;
-}
-.foodchange:nth-child(1){
+  }
+  
+  .foodchange img {
+    width: 100%;
+    border: none;
+  }
+  .foodchange li:nth-child(1) {
     z-index: 5;
-}
-.foodchange:nth-child(2){
+  }
+  .foodchange li:nth-child(2) {
     z-index: 4;
-}
-.foodchange:nth-child(3){
+  }
+  .foodchange li:nth-child(3) {
     z-index: 3;
-}
-.foodchange:nth-child(4){ 
+  }
+  .foodchange li:nth-child(4) {
     z-index: 2;
-}
-.foodchange:nth-child(5){
+  }
+  .foodchange li:nth-child(5) {
     z-index: 1;
-}
+  }
 
 .foodtext li{
     margin: 2rem 0;
@@ -244,29 +260,28 @@ footer{
     position: relative;
 }
 
-.footer ul a, 
-.footer h5 a{
-    color: rgb(107, 107, 107);
-    padding-left: 2rem;
-}
-
-
-
-.footer h5{
+footer .navbar h5{
     position: absolute;
-    bottom: 15%;
-    right: 10px;
-    font-size: 1.5rem;
-    font-weight: 400;
+    top: 0;
+    right: -80%;
     transform: rotate(-90deg);
 }
-.footer h5::after{
-    content: "";
-            display:inline-block;
-            width: 20%;
-            height: 5px;
-            background-color: rgb(201, 255, 121);
-            /* transform: translateX(100px); */
+
+footer .navbar h5::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left:80%;
+    width: 50%;
+    height: 2px;
+    background-color:rgb(92, 92, 92);
+    transition: .3s;
+}
+
+
+
+.copyright h5 a{
+    color: rgb(92, 92, 92);
 }
 
 @media (max-width:768px) {
@@ -302,15 +317,25 @@ footer{
     .springcard h6,.summercard h6{
         font-size: 1.2rem;
     }
+
+    .foodtext-sm li {
+        border-bottom: 1px solid #ccc;
+    }
+
     .foodtext-sm li span{
         display: block;
-        /* margin: 2rem 0; */
+        margin: 1rem 0;
         position: relative;
         width: 100%;
         font-size: 0.9rem;
         font-weight: 300;
-        border-bottom: 1px solid #ccc;
+        color: rgb(168, 168, 168);
         /* padding: 1.5rem; */
+    }
+    .foodtext-sm li a{
+        font-weight: 400;
+        font-size: 1.2rem;
+        color: rgb(39, 39, 39);
     }
 
 }
