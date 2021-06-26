@@ -23,7 +23,8 @@ body{
     transform: translate(-50%, -50%);
     mix-blend-mode: color-dodge;
     /* backdrop-filter: blur; */
-    z-index: 9999;
+    pointer-events: none;
+    z-index: 999;
     transition: .1s;
 }
 /* ------------------body---------------------- */
@@ -129,11 +130,11 @@ padding-left: 5rem;
     transform: translateY(300px);
     opacity: 0;
     transition: 1s;
-    transition-delay: .5s;
+    transition-delay: .2s;
     /* mix-blend-mode: overlay; */
 }
 
-.springbase.show{
+.springbase.show ,.summerbase.show {
     transform: translateY(0px);
     opacity: 1;
 }
@@ -199,6 +200,10 @@ padding-left: 5rem;
     border-radius: 80px;
     background-color: #F2FEFF;
     margin-top: 4rem;
+    transform: translateY(200px);
+    opacity: 0;
+    transition: 1s;
+    transition-delay: .1s;
 }
 
 .summertitle{
@@ -267,6 +272,7 @@ padding-left: 5rem;
     position: absolute;
     top: 0%;
     left: 0%;
+    transition: .5s;
   }
   
   .foodchange img {
@@ -288,6 +294,9 @@ padding-left: 5rem;
   .foodchange li:nth-child(5) {
     z-index: 1;
   }
+  .foodchange li:nth-child(6) {
+    z-index: 6;
+  }
 
 .foodtext li{
     margin: 2rem 0;
@@ -297,6 +306,7 @@ padding-left: 5rem;
     font-weight: 300;
     border-bottom: 1px solid #ccc;
     padding: 1.5rem;
+    
 }
 
 .foodtext li::before{

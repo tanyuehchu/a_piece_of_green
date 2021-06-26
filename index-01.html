@@ -78,14 +78,14 @@
             </div>
         </div>
 
-        <div class="maintitle">
+        <div id="seasonxpark" class="maintitle">
             <h1 class="my-5 pt-5">Seasons x Parks</h1>
             <h4>四季的台北公園</h4>
         </div>
 
     </div>
 
-    <div id="seasonxpark" class="container springbase">
+    <div class="container springbase">
 
         <div class="row justify-content-end mt-5">
             <div class="springtitle col-1 d-none d-md-block col-md-5 text-center">
@@ -183,7 +183,7 @@
     </div>
     <div class="container">
         <div class="foodintro text-center">
-            <div class="maintitle mt-5">
+            <div id="foodxpark" class="maintitle mt-5">
                 <h1>Foods x Parks</h1>
                 <h4 class="my-md-5 my-3">公園周遭的著名美食</h4>
             </div>
@@ -266,18 +266,19 @@
     </div>
     <div class="container foodwrap">
         <h4 class="mt-5 mb-md-3 mb-1">Coffee x Park</h4>
-        <div class="d-flex align-items-center">
+        <div class="parkdemo d-flex align-items-center">
             <i class="fas fa-map-pin"></i>
             <h5>台北市大安區 永康公園</h5>
         </div>
 
         <div class="fooddemo d-md-flex d-block justify-content-between">
             <ul class="foodchange col-12 col-md-6  list-unstyled">
-                <li><img src="./img/food-demo-1.jpg" alt=""></li>
+                <li><img src="./img/food-demo-6.jpg" alt=""></li>
                 <li><img src="./img/food-demo-2.jpg" alt=""></li>
                 <li><img src="./img/food-demo-3.jpg" alt=""></li>
                 <li><img src="./img/food-demo-4.jpg" alt=""></li>
                 <li><img src="./img/food-demo-5.jpg" alt=""></li>
+                <li><img src="./img/food-demo-1.jpg" alt=""></li>
             </ul>
             <ul class="foodtext col-12 col-md-6 d-md-block d-none list-unstyled my-3">
                 <li class="d-flex justify-content-between">
@@ -333,9 +334,8 @@
         <div class="navbar d-none d-md-inline text-center">
             <ul class="list-unstyled d-flex justify-content-center text-decoration-none">
                 <li id="seasonlink"><a href="#seasonxpark">season x park</a></li>
-                <li><a href="">food x park</a></li>
+                <li id="foodlink"><a href="">food x park</a></li>
                 <li><a href="">food x coffee</a></li>
-                <li><a href="">美食 x 公園</a></li>
             </ul>
             <h5 id="top"><span>Top</span>
             </h5>
@@ -356,15 +356,15 @@
     </footer>
 
 
-    <script src="./countUp.js-master/dist/countUp.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/countup.js/1.8.2/countUp.min.js'></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script>
         // 滑鼠效果
 
-        // $(window).mousemove(function (e) {
-        //     $(".circle").css({ top: e.pageY, left: e.pageX });
-        // });
+        $(window).mousemove(function (e) {
+            $(".circle").css({ top: e.pageY, left: e.pageX });
+        });
 
         $('.springcard img').mouseenter(function () {
             $(this).addClass('img-hover');
@@ -390,12 +390,17 @@
 
         $(window).scroll(function () {
             const scrollDown = $(window).scrollTop();
-            let titleTop = $('.maintitle').offset().top
-            console.log(titleTop);
+            const nowViewHeight = $(window).scrollTop() + $(window).height();
 
 
-            //console.log(scrollDown);
+            const mianTitleShow = $('.maintitle').offset().top //mainTitle出現
+            const springShow = $('.springbase').offset().top //springbase出現
+            const summerShow = $('.summerbase').offset().top
 
+
+
+            console.log(scrollDown);
+            console.log($('.maintitle').offset().top);
             //1.先判斷使用者往上或往下滑
 
 
@@ -408,24 +413,33 @@
                 $('.explore').removeClass('animate__bounce');
             }
 
+            //2.更新 lastScroll
+            lastScroll = scrollDown;
 
-
-            if (scrollDown + $(window).height() >= titleTop) {
+            if (nowViewHeight >= mianTitleShow) {
                 $('.maintitle').addClass('maintitle-show')
             }
             else {
                 $('.maintitle').removeClass('maintitle-show');
             }
 
-            if (scrollDown + $(window).height() >= titleTop) {
+            if (nowViewHeight >= springShow) {
                 $('.springbase').addClass('show')
             }
             else {
                 $('.springbase').removeClass('show');
             }
 
-            //2.更新 lastScroll
-            lastScroll = scrollDown;
+
+
+            if (nowViewHeight >= summerShow) {
+                $('.summerbase').addClass('show')
+            }
+            else {
+                $('.summerbase').removeClass('show');
+            }
+
+
 
         })
 
@@ -444,11 +458,36 @@
                 }
 
                 //開始值,結束值,小數點,執行速度
-                var demo = new countUp("myTargetElement", 0, 8888888888, 0, 2.5, options);
+                var demo = new CountUp("myTargetElement", 0, 1130, 0, 2.5, options);
                 demo.start();
             }
 
         });
+
+
+        //changePage
+        $('.foodtext li').click(function () {
+
+            //console.log('li index : ', $(this).index());
+            const foodTextIndex = $(this).index();
+
+            $('.foodchange li').each(function (index, item) {
+
+                //console.log('.foodchange li this index :', $(this).index());
+
+                if (foodTextIndex == index) {
+                    $(item).css('opacity', '1')
+                }
+                else {
+                    $(item).css('opacity', '0')
+                }
+            })
+
+        })
+        $('.parkdemo').click(function () {
+            $('.foodchange li:eq(5)').css('opacity', '1')
+        })
+
 
         //to top
 
@@ -460,41 +499,33 @@
                 },
 
                 mouseenter: function () {
-                    console.log('enter');
+                    //console.log('enter');
                     $(this).addClass('top')
                 },
             }
         )
 
-        //changePage
-        $('.foodtext li').click(function () {
-            console.log('clicked');
-            console.log('hi:', $(this));
-            console.log('li index : ', $(this).index());
-
-
-            $('foodchange li').each(function (index, item) {
-                if ($(this).index() = $('foodchange li').index()) {
-                    $('foodchange li img').css('opacity', '1')
-                }
-                else {
-                    $('foodchange li img').css('opacity', '0')
-                }
-            })
-
-
-        })
 
         //to id
         $("#seasonlink").click(function () {
-            console.log($("#seasonxpark").offset().top);
+            //console.log($("#seasonxpark").offset().top);
 
             // $("#seasonxpark").offset({
             //     top: '1350'
             // })
 
             $("html, body").animate({
-                scrollTop: $("#seasonxpark").offset().top
+                scrollTop: $("#seasonxpark").offset().top - 100
+            }, { duration: 500, easing: "swing" });
+            return false;
+        });
+        $("#foodlink").click(function () {
+            //console.log('food', $("#foodxpark").offset().top - 100);
+
+
+
+            $("html, body").animate({
+                scrollTop: $("#foodxpark").offset().top - 100
             }, { duration: 500, easing: "swing" });
             return false;
         });
