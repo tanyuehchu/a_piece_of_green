@@ -27,11 +27,27 @@ body{
 
 /* -----body------------------------------ */
 
-.logo{
-    width: 10%;
+nav{
+    width: 100%;
+    padding-top: 1rem;
+    margin: 0 auto;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0%;
+    z-index: 999;
 }
 
-.navbar ul a{
+.nav_shadow{
+    box-shadow: 0 5px 30px 0 rgb(0 0 0 / 15%);
+}
+
+.logo{
+    padding-left: 5rem;
+   width: 200px;
+}
+
+.navbar a{
    
     color: rgb(107, 107, 107);
     padding: 2rem;
