@@ -340,4 +340,16 @@ footer .navbar h5::after{
 
 }
 
+@media (max-width : 375px) {
+    .foodwrap .foodchange {
+        width: 100%;
+        position: relative;
+        min-height: 400px;
+        /* u因為position使父層高度消失，
+        所以用最小高度（＝圖片高度解決）
+        min-height: calc(100% - 圖片高度)
+        */
+      }
+}
+
 

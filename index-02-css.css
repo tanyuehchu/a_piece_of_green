@@ -4,6 +4,10 @@ h1, h2, h3, h4, h5, h6, p,span{
     font-family: 'Noto Sans TC', sans-serif;
     letter-spacing: 0.3rem;
 }
+ul {
+    padding: 0;
+    margin: 0;
+}
 body{
     padding: 0;
 }
@@ -74,6 +78,7 @@ body{
 .map-title p{
     position: relative;
 }
+
 .map-title p::after{
     display: inline;
     border-top: 1px solid rgb(92, 92, 92);
@@ -84,86 +89,99 @@ body{
     width: 50%;
 }
 
-.surrounding.imgwrap , .map-focus.imgwrap{
+.surrounding .imgwrap{
     width: 100%;
+    min-height: 600px;
     overflow: hidden;
     position: relative;
 }
 
 .imgwrap img{
+    width: 100%;
     object-fit: contain;
     position: absolute;
     top: 0;
     left: 0;
 }
 
+
+
 #surrounding-day{
-    z-index: 2;
+    z-index: 10;
+}
+
+#surrounding-night{
+    z-index: 0;
 }
 
 
-.pick-zone::before{
-    content: '';
-    display:inline-block;
-    width: 1.5rem;
-    height: 1.5rem;
-    background-color: #CAFFAA;
+.pick_zone {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 2rem 0;
+        }
+
+.btn {
+    width: 2rem;
+    height: 2rem;
     border-radius: 50%;
-    /* margin-right: 50%; */
+    background-color:#FFFB95;
+
+
+        }
+
+.btn_text {
+    justify-content: start;
+    padding-left: 1rem;
+        }
+
+.btn_text h5{
+    color: rgb(49, 49, 49);
+}
+.btn_text h6{
+    color: rgb(168, 168, 168);
+    font-size: 1rem;
+    font-weight: 300;
+}
+/* ---平板RWD---------------------------- */
+
+@media screen and (max-width: 767px) {
+
+    .map-title p::after{
+        display: inline;
+        border-top: 1px solid rgb(80, 80, 80);
+        content: ' ';
+        top: 120%;
+        right: 0px;    
+        position: absolute;
+        width: 100%;
+    }
+    
+    
+    .surrounding .imgwrap{
+        width: 100%;
+        min-height: 400px;
+        overflow: hidden;
+        position: relative;
+    }
+    .pick_zone_wrap{
+        display: flex;
+        flex-wrap: wrap;
+    }
 }
 
-/* -----------------map-focus-------------------- */
 
-.focus-title p{
-    position: relative;
-}
-
-.focus-title p::after{
-    display: inline;
-    border-top: 1px solid rgb(92, 92, 92);
-    content: ' ';
-    top: 10px;
-    right: 25%;    
-    position: absolute;
-    width: 80%;
-}
-
-
-
-.bgc-day{
-    background-color: #FFFEF4;
-}
-
-.bgc-night{
-    background-color: #666699;
-}
-
-/* -----------------footer-------------------- */
-
-footer{
-    height:50%;
-    background-color: rgb(214, 214, 214);
-    position: relative;
-}
-
-.footer ul a, 
-.footer h5 a{
-    color: rgb(107, 107, 107);
-    padding-left: 2rem;
-}
-.footer h5{
-    position: absolute;
-    bottom: 15%;
-    right: 10px;
-    font-size: 1.5rem;
-    font-weight: 400;
-    transform: rotate(-90deg);
-}
-.footer h5::after{
-    content: "";
-            display:inline-block;
-            width: 20%;
-            height: 5px;
-            background-color: rgb(201, 255, 121);
-            /* transform: translateX(100px); */
+@media screen and (max-width: 400px) {
+    .surrounding .imgwrap{
+        width: 100%;
+        min-height: 260px;
+        overflow: hidden;
+        position: relative;
+    }
+    .pick_zone_wrap{
+        display: flex;
+        flex-wrap: wrap;
+    }
 }
