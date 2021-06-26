@@ -68,7 +68,7 @@
             <div class="col-12 col-md-6  text">
                 <h5 class="lineheight mt-3 mt-md-0">2016年，台北市實行Re-create Taipei 臺北鄰里公園翻轉計畫，同時間新增規劃了150+處公園綠地。</h5>
                 <h4>直至2021年統計台北市的公園增加了</h4>
-                <div class="numberwrap"><span class="number lightgreen">1,130</span><i
+                <div class="numberwrap"><span id="myTargetElement" class="number lightgreen">1,130</span><i
                         class="fas fa-plus lightgreen"></i></div>
                 <h4 class="mt-md-3">每年內在台北大型公園舉辦的活動至少</h4>
                 <div class="numberwrap">
@@ -356,7 +356,7 @@
     </footer>
 
 
-
+    <script src="./countUp.js-master/dist/countUp.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script>
@@ -366,14 +366,22 @@
         //     $(".circle").css({ top: e.pageY, left: e.pageX });
         // });
 
-        $('.springcard img').hover(function () {
+        $('.springcard img').mouseenter(function () {
             $(this).addClass('img-hover');
             console.log('hover'), $(this).hover();
         })
+        $('.springcard img').mouseleave(function () {
+            $(this).removeClass('img-hover');
+            console.log('hover'), $(this).hover();
+        })
+
+
         $('.summercard img').hover(function () {
             $(this).addClass('img-hover');
             console.log('hover'), $(this).hover();
         })
+
+
 
 
         // scroll 效果
@@ -400,6 +408,8 @@
                 $('.explore').removeClass('animate__bounce');
             }
 
+
+
             if (scrollDown + $(window).height() >= titleTop) {
                 $('.maintitle').addClass('maintitle-show')
             }
@@ -418,6 +428,27 @@
             lastScroll = scrollDown;
 
         })
+
+        $(document).ready(function () {
+            myTargetElement();
+
+            function myTargetElement() {
+
+                var options = {
+                    useEasing: true,
+                    useGrouping: true, //進位
+                    separator: ',',
+                    decimal: '.',
+                    prefix: '', //前面留幾個0
+                    suffix: ''  //後面留幾個0
+                }
+
+                //開始值,結束值,小數點,執行速度
+                var demo = new countUp("myTargetElement", 0, 8888888888, 0, 2.5, options);
+                demo.start();
+            }
+
+        });
 
         //to top
 

@@ -164,6 +164,7 @@ padding-left: 5rem;
 
 .springcard img , .summercard img{
     width: 100%;
+    transition: all 1s; 
 }
 
 /* .springcard .imgwrap img:hover{
