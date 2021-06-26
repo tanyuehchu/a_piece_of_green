@@ -28,6 +28,7 @@
 </head>
 
 <body>
+    <div class="circle"></div>
     <nav class="d-flex justify-content-between align-items-center p-2">
         <div class="logo">
             <a href="./index-01.html"><img class="w-100" src="./SVG/logo_1.svg" alt=""></a>
@@ -83,8 +84,8 @@
         </div>
 
     </div>
-    <div class="circle"></div>
-    <div class="container springbase">
+
+    <div id="seasonxpark" class="container springbase">
 
         <div class="row justify-content-end mt-5">
             <div class="springtitle col-1 d-none d-md-block col-md-5 text-center">
@@ -331,12 +332,12 @@
     <footer class="d-flex justify-content-center align-items-center mt-4 pt-5">
         <div class="navbar d-none d-md-inline text-center">
             <ul class="list-unstyled d-flex justify-content-center text-decoration-none">
-                <li><a href="">season x park</a></li>
+                <li id="seasonlink"><a href="#seasonxpark">season x park</a></li>
                 <li><a href="">food x park</a></li>
                 <li><a href="">food x coffee</a></li>
                 <li><a href="">美食 x 公園</a></li>
             </ul>
-            <h5><a href="">Top</a>
+            <h5 id="top"><span>Top</span>
             </h5>
             <p><small class="text-light">
                     Copy right by TanYueh Chu
@@ -345,7 +346,7 @@
         </div>
 
         <div class="copyright text-center d-block d-md-none">
-            <h5><a href="">Top</a>
+            <h5 id="top"><span>Top</span>
             </h5>
             <p><small class="text-light">
                     Copy right by TanYueh Chu
@@ -381,8 +382,11 @@
 
         $(window).scroll(function () {
             const scrollDown = $(window).scrollTop();
+            let titleTop = $('.maintitle').offset().top
+            console.log(titleTop);
 
-            console.log(scrollDown);
+
+            //console.log(scrollDown);
 
             //1.先判斷使用者往上或往下滑
 
@@ -396,16 +400,73 @@
                 $('.explore').removeClass('animate__bounce');
             }
 
+            if (scrollDown + $(window).height() >= titleTop) {
+                $('.maintitle').addClass('maintitle-show')
+            }
+            else {
+                $('.maintitle').removeClass('maintitle-show');
+            }
+
+            if (scrollDown + $(window).height() >= titleTop) {
+                $('.springbase').addClass('show')
+            }
+            else {
+                $('.springbase').removeClass('show');
+            }
+
             //2.更新 lastScroll
             lastScroll = scrollDown;
 
         })
 
+        //to top
+
+        $('#top').on(
+            {
+                click: function () {
+                    $("html, body").animate({ scrollTop: 0 }, "slow");
+                    return false;
+                },
+
+                mouseenter: function () {
+                    console.log('enter');
+                    $(this).addClass('top')
+                },
+            }
+        )
+
         //changePage
         $('.foodtext li').click(function () {
             console.log('clicked');
-            $(this).css('opacity', '1');
+            console.log('hi:', $(this));
+            console.log('li index : ', $(this).index());
+
+
+            $('foodchange li').each(function (index, item) {
+                if ($(this).index() = $('foodchange li').index()) {
+                    $('foodchange li img').css('opacity', '1')
+                }
+                else {
+                    $('foodchange li img').css('opacity', '0')
+                }
+            })
+
+
         })
+
+        //to id
+        $("#seasonlink").click(function () {
+            console.log($("#seasonxpark").offset().top);
+
+            // $("#seasonxpark").offset({
+            //     top: '1350'
+            // })
+
+            $("html, body").animate({
+                scrollTop: $("#seasonxpark").offset().top
+            }, { duration: 500, easing: "swing" });
+            return false;
+        });
 
 
     </script>
