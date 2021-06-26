@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .jumbo {
+            margin: 0;
+            color: #EC4365;
+            font-size: 200%;
+            white-space: nowrap;
+        }
+
+        body {
+            background: #000;
+            font-family: arial;
+        }
+
+        .circle {
+            width: 60px;
+            height: 60px;
+            background: #fff;
+            position: absolute;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            mix-blend-mode: difference;
+        }
+
+        .wrapper {
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="circle"></div>
+    <div class="wrapper text-center">
+        <h1>HELLO WORLD!!</h1>
+    </div>
+    <div class="jumbo" id="myTargetElement">0</div>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+
+    </script>
+    <script src="./countUp.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            myTargetElement();
+
+            function myTargetElement() {
+
+                var options = {
+                    useEasing: true,
+                    useGrouping: true, //進位
+                    separator: ',',
+                    decimal: '.',
+                    prefix: '', //前面留幾個0
+                    suffix: ''  //後面留幾個0
+                }
+
+                //開始值,結束值,小數點,執行速度
+                var demo = new countUp("myTargetElement", 0, 8888888888, 0, 2.5, options);
+                demo.start();
+            }
+
+        });
+
+        $(window).mousemove(function (e) {
+            $(".circle").css({ top: e.pageY, left: e.pageX });
+        });
+    </script>
+
+</body>
+
+</html>
