@@ -107,7 +107,6 @@ nav{
 
 .mapbase{
     width: 100%;
-    /* min-height: 600px; */
     position: relative;
 }
 
@@ -125,11 +124,11 @@ nav{
 }
 
 
-/* .pick_zone_wrap{
+.pick_zone_wrap{
     width: 100%;
     min-height: 600px;
     position: relative;
-} */
+}
 
 .pick_zone {
     width: 100%;
@@ -143,13 +142,16 @@ nav{
 #surrounding-day{
     z-index: 5;
 }
+.day_png{
+    z-index: 10;
+}
 
 
-/* #day , #night{
+#day , #night{
     position: absolute;
     top: 0;
     right: 0;
-} */
+}
 
 #night{
     display: none;
@@ -196,21 +198,23 @@ body.night_mode{
         width: 100%;
     }
     
-    
-    .surrounding .imgwrap{
-        width: 100%;
-        min-height: 400px;
-        overflow: hidden;
-        position: relative;
+    #day , #night{
+        display: flex;
+        flex-wrap: wrap;
+        position: absolute;
+        top: 0;
+        right: 0;
     }
 }
 
 
-@media screen and (max-width: 400px) {
-    .surrounding .imgwrap{
-        width: 100%;
-        min-height: 260px;
-        overflow: hidden;
-        position: relative;
+@media screen and (max-width: 375px) {
+    
+    #day , #night{
+        display: flex;
+        flex-wrap: wrap;
+        position: absolute;
+        top: 0;
+        right: 0;
     }
 }

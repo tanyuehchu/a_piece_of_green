@@ -85,7 +85,7 @@
                     <img id="surrounding-day" src="./img/surounding-map-day.jpg" alt="">
                     <img id="surrounding-night" src="./img/surounding-map-night-04.jpg" alt="">
                 </div>
-                <div class="pngchange">
+                <div class="day_png pngchange">
                     <img src="./img/site_工作區域 4.png" alt="">
                     <img src="./img/market_工作區域 4.png" alt="">
                     <img src="./img/coolest_工作區域 4.png" alt="">
@@ -271,27 +271,21 @@
 
         //min-height
 
-        let windowWidth = $(window).width();
-        let imgHeight = $('.mapbase img').height();
+        $(window).on('load', function () {
+            let windowWidth = $(window).width();
+            let imgHeight = $('.mapbase img').height();
 
-        console.log('img', imgHeight);
-        console.log('window', $(window).width());
+            console.log('img', imgHeight);
+            console.log('window', $(window).width());
 
-        $(window).resize(function () {
-            $('.mapbase').css("min-height", imgHeight);
-        }).resize();
+            $(window).resize(function () {
+                $('.mapbase').css("min-height", imgHeight);
+            }).resize();
 
+        })
 
 
         //changePage
-        $(document).ready(function () {
-            $('.pngchange img').eq(0).css(
-                'opacity', '1'
-            )
-            $('.pngchange img').eq(0).siblings().css(
-                'opacity', '0'
-            )
-        })
 
         $('.pick_zone_wrap .pick_zone').click(function () {
             console.log('.pick_zone_wrap .pick_zone : ', $(this).index());
@@ -313,31 +307,29 @@
         //night
 
 
-        // $('#switch').click(function () {
-
-        //     $('.btn_text').each(function (index, item) {
-        //         console.log('h5 index :', $(this).index());
-        //     })
-        // })
-
-
         //點擊switch->body切換夜晚模式,#night.show(),#day是.hide()，再次點擊切換回來
 
         //點擊次數單數->白天模式,偶數->夜晚模式
 
         $('#switch').click(function () {
-            $('#night').show();
-            $('#day').hide();
+
+            console.log('hi', $('#day').is(':hidden'));
 
             if ($('#day').is(':hidden')) {
                 console.log('true');
-                $('body').addClass('night_mode');
-                $('#surrounding-day').css('opacity', '0')
+                $('body').removeClass('night_mode');
+                $('#surrounding-day').css('opacity', '1')
+                $('#day').show();
+                $('#night').hide();
+                $('.day_png').show();
             }
 
             else {
-                $('body').removeClass('night_mode');
-                $('#surrounding-day').css('opacity', '1')
+                $('body').addClass('night_mode');
+                $('#surrounding-day').css('opacity', '0')
+                $('#night').show();
+                $('#day').hide();
+                $('.day_png').hide();
             }
         })
 
