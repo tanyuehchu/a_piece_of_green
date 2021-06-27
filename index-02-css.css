@@ -105,14 +105,18 @@ nav{
     width: 50%;
 }
 
-.surrounding .imgwrap{
+.mapbase{
     width: 100%;
-    min-height: 600px;
-    overflow: hidden;
+    /* min-height: 600px; */
     position: relative;
 }
 
-.imgwrap img{
+.mapbase .pngchange ,.mapbase .pngbase{
+    width: 100%;
+    overflow: hidden; 
+}
+
+.pngchange img ,.pngbase img{
     width: 100%;
     object-fit: contain;
     position: absolute;
@@ -121,15 +125,11 @@ nav{
 }
 
 
-
-#surrounding-day{
-    z-index: 10;
-}
-
-#surrounding-night{
-    z-index: 0;
-}
-
+/* .pick_zone_wrap{
+    width: 100%;
+    min-height: 600px;
+    position: relative;
+} */
 
 .pick_zone {
     width: 100%;
@@ -137,15 +137,34 @@ nav{
     justify-content: start;
     align-items: center;
     padding: 2rem 0;
+    
         }
+
+#surrounding-day{
+    z-index: 5;
+}
+
+
+/* #day , #night{
+    position: absolute;
+    top: 0;
+    right: 0;
+} */
+
+#night{
+    display: none;
+}
+
+body.night_mode{
+    background-color:#3e3e5e;
+    color: white;
+}
 
 .btn {
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
-    background-color:#FFFB95;
-
-
+    background-color:#cdfdff;
         }
 
 .btn_text {
@@ -161,6 +180,8 @@ nav{
     font-size: 1rem;
     font-weight: 300;
 }
+
+
 /* ---平板RWD---------------------------- */
 
 @media screen and (max-width: 767px) {
@@ -182,10 +203,6 @@ nav{
         overflow: hidden;
         position: relative;
     }
-    .pick_zone_wrap{
-        display: flex;
-        flex-wrap: wrap;
-    }
 }
 
 
@@ -195,9 +212,5 @@ nav{
         min-height: 260px;
         overflow: hidden;
         position: relative;
-    }
-    .pick_zone_wrap{
-        display: flex;
-        flex-wrap: wrap;
     }
 }

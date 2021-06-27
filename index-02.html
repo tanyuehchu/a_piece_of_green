@@ -14,7 +14,7 @@
     <title>中強公園</title>
 </head>
 
-<body class="bgc-day">
+<body>
     <nav class="d-flex justify-content-between align-items-center p-2">
         <div class="logo">
             <a href="./index-01.html"><img class="w-100" src="./SVG/logo_1.svg" alt=""></a>
@@ -75,88 +75,167 @@
             <p>認識公園從周邊開始(走路 10分鐘距離（1000m）)</p>
         </div>
         <div class="row justify-content-center">
-            <button>
+            <button id="switch">
                 切換晚上
             </button>
         </div>
         <div class="row surrounding justify-content-between align-items-center mt-5">
-            <div class="imgwrap col-md-9 col-12">
-                <img id="surrounding-day" src="./img/surounding-map-day.jpg" alt="">
-                <img id="surrounding-night" src="./img/surounding-map-night-04.jpg" alt="">
-                <img src="./img/site_工作區域 4.png" alt="">
-                <img src="./img/market_工作區域 4.png" alt="">
-                <img src="./img/coolest_工作區域 4.png" alt="">
+            <div class="mapbase col-md-9 col-12">
+                <div class="pngbase">
+                    <img id="surrounding-day" src="./img/surounding-map-day.jpg" alt="">
+                    <img id="surrounding-night" src="./img/surounding-map-night-04.jpg" alt="">
+                </div>
+                <div class="pngchange">
+                    <img src="./img/site_工作區域 4.png" alt="">
+                    <img src="./img/market_工作區域 4.png" alt="">
+                    <img src="./img/coolest_工作區域 4.png" alt="">
+                </div>
             </div>
+
             <ul class="pick_zone_wrap col-md-3 col-12 list-unstyled">
-                <div class="pick_zone col-6 col-md">
-                    <button class="btn">
-                    </button>
-                    <ul class="btn_text">
-                        <a class="list-unstyled text-muted" href="">
-                            <li>
-                                <h5>周邊美食</h5>
-                            </li>
-                            <li>
-                                <h6>周邊四星以上美食</h6>
-                            </li>
-                        </a>
-                    </ul>
+                <div id="day">
+                    <div class="pick_zone col-6 col-md">
+                        <button class="btn">
+                        </button>
+                        <ul class="btn_text">
+                            <a class="list-unstyled text-muted" href="">
+                                <li>
+                                    <h5>周邊美食</h5>
+                                </li>
+                                <li>
+                                    <h6>周邊四星以上美食</h6>
+                                </li>
+                            </a>
+                        </ul>
+                    </div>
+                    <div class="pick_zone col-6 col-md">
+                        <button class="btn">
+                        </button>
+                        <ul class="btn_text">
+                            <a class="list-unstyled text-muted" href="">
+                                <li>
+                                    <h5>周邊美食</h5>
+                                </li>
+                                <li>
+                                    <h6>周邊四星以上美食</h6>
+                                </li>
+                            </a>
+                        </ul>
+                    </div>
+                    <div class="pick_zone col-6 col-md">
+                        <button class="btn">
+                        </button>
+                        <ul class="btn_text">
+                            <a class="list-unstyled text-muted" href="">
+                                <li>
+                                    <h5>周邊美食</h5>
+                                </li>
+                                <li>
+                                    <h6>周邊四星以上美食</h6>
+                                </li>
+                            </a>
+                        </ul>
+                    </div>
+                    <div class="pick_zone col-6 col-md">
+                        <button class="btn">
+                        </button>
+                        <ul class="btn_text">
+                            <a class="list-unstyled text-muted" href="">
+                                <li>
+                                    <h5>周邊美食</h5>
+                                </li>
+                                <li>
+                                    <h6>周邊四星以上美食</h6>
+                                </li>
+                            </a>
+                        </ul>
+                    </div>
+                    <div class="pick_zone col-6 col-md">
+                        <button class="btn">
+                        </button>
+                        <ul class="btn_text">
+                            <a class="list-unstyled text-muted" href="">
+                                <li>
+                                    <h5>周邊美食</h5>
+                                </li>
+                                <li>
+                                    <h6>周邊四星以上美食</h6>
+                                </li>
+                            </a>
+                        </ul>
+                    </div>
                 </div>
-                <div class="pick_zone col-6 col-md">
-                    <button class="btn">
-                    </button>
-                    <ul class="btn_text">
-                        <a class="list-unstyled text-muted" href="">
-                            <li>
-                                <h5>周邊美食</h5>
-                            </li>
-                            <li>
-                                <h6>周邊四星以上美食</h6>
-                            </li>
-                        </a>
-                    </ul>
-                </div>
-                <div class="pick_zone col-6 col-md">
-                    <button class="btn">
-                    </button>
-                    <ul class="btn_text">
-                        <a class="list-unstyled text-muted" href="">
-                            <li>
-                                <h5>周邊美食</h5>
-                            </li>
-                            <li>
-                                <h6>周邊四星以上美食</h6>
-                            </li>
-                        </a>
-                    </ul>
-                </div>
-                <div class="pick_zone col-6 col-md">
-                    <button class="btn">
-                    </button>
-                    <ul class="btn_text">
-                        <a class="list-unstyled text-muted" href="">
-                            <li>
-                                <h5>周邊美食</h5>
-                            </li>
-                            <li>
-                                <h6>周邊四星以上美食</h6>
-                            </li>
-                        </a>
-                    </ul>
-                </div>
-                <div class="pick_zone col-6 col-md">
-                    <button class="btn">
-                    </button>
-                    <ul class="btn_text">
-                        <a class="list-unstyled text-muted" href="">
-                            <li>
-                                <h5>周邊美食</h5>
-                            </li>
-                            <li>
-                                <h6>周邊四星以上美食</h6>
-                            </li>
-                        </a>
-                    </ul>
+                <div id="night">
+                    <div class="pick_zone col-6 col-md">
+                        <button class="btn">
+                        </button>
+                        <ul class="btn_text">
+                            <a class="list-unstyled text-muted" href="">
+                                <li>
+                                    <h5>我是晚上</h5>
+                                </li>
+                                <li>
+                                    <h6>我是晚上</h6>
+                                </li>
+                            </a>
+                        </ul>
+                    </div>
+                    <div class="pick_zone col-6 col-md">
+                        <button class="btn">
+                        </button>
+                        <ul class="btn_text">
+                            <a class="list-unstyled text-muted" href="">
+                                <li>
+                                    <h5>周邊美食</h5>
+                                </li>
+                                <li>
+                                    <h6>周邊四星以上美食</h6>
+                                </li>
+                            </a>
+                        </ul>
+                    </div>
+                    <div class="pick_zone col-6 col-md">
+                        <button class="btn">
+                        </button>
+                        <ul class="btn_text">
+                            <a class="list-unstyled text-muted" href="">
+                                <li>
+                                    <h5>周邊美食</h5>
+                                </li>
+                                <li>
+                                    <h6>周邊四星以上美食</h6>
+                                </li>
+                            </a>
+                        </ul>
+                    </div>
+                    <div class="pick_zone col-6 col-md">
+                        <button class="btn">
+                        </button>
+                        <ul class="btn_text">
+                            <a class="list-unstyled text-muted" href="">
+                                <li>
+                                    <h5>周邊美食</h5>
+                                </li>
+                                <li>
+                                    <h6>周邊四星以上美食</h6>
+                                </li>
+                            </a>
+                        </ul>
+                    </div>
+                    <div class="pick_zone col-6 col-md">
+                        <button class="btn">
+                        </button>
+                        <ul class="btn_text">
+                            <a class="list-unstyled text-muted" href="">
+                                <li>
+                                    <h5>周邊美食</h5>
+                                </li>
+                                <li>
+                                    <h6>周邊四星以上美食</h6>
+                                </li>
+                            </a>
+                        </ul>
+                    </div>
                 </div>
             </ul>
         </div>
@@ -191,14 +270,76 @@
         })
 
         //min-height
+
         let windowWidth = $(window).width();
-        let imgHeight = $('.imgwrap img').height();
+        let imgHeight = $('.mapbase img').height();
 
-        window.lοad = function () {
-            console.log('img', imgHeight);
-            console.log('window', $(window).width());
-        }
+        console.log('img', imgHeight);
+        console.log('window', $(window).width());
 
+        $(window).resize(function () {
+            $('.mapbase').css("min-height", imgHeight);
+        }).resize();
+
+
+
+        //changePage
+        $(document).ready(function () {
+            $('.pngchange img').eq(0).css(
+                'opacity', '1'
+            )
+            $('.pngchange img').eq(0).siblings().css(
+                'opacity', '0'
+            )
+        })
+
+        $('.pick_zone_wrap .pick_zone').click(function () {
+            console.log('.pick_zone_wrap .pick_zone : ', $(this).index());
+
+            const pickZoneIndex = $(this).index();
+
+            $('.mapbase .pngchange img').each(function (index, item) {
+                console.log('.mapbase .pngchange img this index :', $(this).index());
+
+                if (pickZoneIndex == index) {
+                    $(item).css('opacity', '1')
+                }
+                else {
+                    $(item).css('opacity', '0')
+                }
+            })
+        })
+
+        //night
+
+
+        // $('#switch').click(function () {
+
+        //     $('.btn_text').each(function (index, item) {
+        //         console.log('h5 index :', $(this).index());
+        //     })
+        // })
+
+
+        //點擊switch->body切換夜晚模式,#night.show(),#day是.hide()，再次點擊切換回來
+
+        //點擊次數單數->白天模式,偶數->夜晚模式
+
+        $('#switch').click(function () {
+            $('#night').show();
+            $('#day').hide();
+
+            if ($('#day').is(':hidden')) {
+                console.log('true');
+                $('body').addClass('night_mode');
+                $('#surrounding-day').css('opacity', '0')
+            }
+
+            else {
+                $('body').removeClass('night_mode');
+                $('#surrounding-day').css('opacity', '1')
+            }
+        })
 
 
     </script>

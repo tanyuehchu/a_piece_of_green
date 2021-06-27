@@ -472,12 +472,12 @@
         //changePage
         $('.foodtext li').click(function () {
 
-            //console.log('li index : ', $(this).index());
+            console.log('li index : ', $(this).index());
             const foodTextIndex = $(this).index();
 
             $('.foodchange li').each(function (index, item) {
 
-                //console.log('.foodchange li this index :', $(this).index());
+                console.log('.foodchange li this index :', $(this).index());
 
                 if (foodTextIndex == index) {
                     $(item).css('opacity', '1')
