@@ -8,81 +8,213 @@
     <title>Document</title>
 
     <style>
-        .jumbo {
-            margin: 0;
-            color: #EC4365;
-            font-size: 200%;
-            white-space: nowrap;
+        .map-title p {
+            position: relative;
         }
 
-        body {
-            background: #000;
-            font-family: arial;
-        }
-
-        .circle {
-            width: 60px;
-            height: 60px;
-            background: #fff;
+        .map-title p::after {
+            display: inline;
+            border-top: 1px solid rgb(92, 92, 92);
+            content: ' ';
+            top: 10px;
+            right: 15px;
             position: absolute;
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            mix-blend-mode: difference;
+            width: 50%;
         }
 
-        .wrapper {
-            width: 500px;
-            height: 500px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        img {
+        .surrounding .imgwrap {
             width: 100%;
+            min-height: 600px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .imgwrap img {
+            width: 100%;
+            object-fit: contain;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+
+
+        #surrounding-day {
+            z-index: 10;
+        }
+
+        #surrounding-night {
+            z-index: 0;
+        }
+
+
+        .pick_zone {
+            width: 100%;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            padding: 2rem 0;
+        }
+
+        .btn {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            background-color: #FFFB95;
+
+
+        }
+
+        .btn_text {
+            justify-content: start;
+            padding-left: 1rem;
+        }
+
+        .btn_text h5 {
+            color: rgb(49, 49, 49);
+        }
+
+        .btn_text h6 {
+            color: rgb(168, 168, 168);
+            font-size: 1rem;
+            font-weight: 300;
         }
     </style>
 </head>
 
 <body>
-    <div class="circle"></div>
-    <div class="wrapper text-center">
-        <h1>HELLO WORLD!!</h1>
+    <div class="map-title mt-5 text-center text-md-left">
+        <h3 class="lineheight2">公園旁邊</h3>
+        <p>認識公園從周邊開始(走路 10分鐘距離（1000m）)</p>
     </div>
-    <div class="jumbo" id="myTargetElement">0</div>
+    <div class="row justify-content-center">
+        <button>
+            切換晚上
+        </button>
+    </div>
+    <div class="row surrounding justify-content-between align-items-center mt-5">
+        <div class="imgwrap col-md-9 col-12">
+            <img id="surrounding-day" src="./img/surounding-map-day.jpg" alt="">
+            <img id="surrounding-night" src="./img/surounding-map-night-04.jpg" alt="">
+            <img src="./img/site_工作區域 4.png" alt="">
+            <img src="./img/market_工作區域 4.png" alt="">
+            <img src="./img/coolest_工作區域 4.png" alt="">
+        </div>
+        <ul class="pick_zone_wrap col-md-3 col-12 list-unstyled">
+            <div class="pick_zone col-6 col-md">
+                <button class="btn">
+                </button>
+                <ul class="btn_text">
+                    <a class="list-unstyled text-muted" href="">
+                        <li>
+                            <h5>周邊美食</h5>
+                        </li>
+                        <li>
+                            <h6>周邊四星以上美食</h6>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+            <div class="pick_zone col-6 col-md">
+                <button class="btn">
+                </button>
+                <ul class="btn_text">
+                    <a class="list-unstyled text-muted" href="">
+                        <li>
+                            <h5>周邊美食</h5>
+                        </li>
+                        <li>
+                            <h6>周邊四星以上美食</h6>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+            <div class="pick_zone col-6 col-md">
+                <button class="btn">
+                </button>
+                <ul class="btn_text">
+                    <a class="list-unstyled text-muted" href="">
+                        <li>
+                            <h5>周邊美食</h5>
+                        </li>
+                        <li>
+                            <h6>周邊四星以上美食</h6>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+            <div class="pick_zone col-6 col-md">
+                <button class="btn">
+                </button>
+                <ul class="btn_text">
+                    <a class="list-unstyled text-muted" href="">
+                        <li>
+                            <h5>周邊美食</h5>
+                        </li>
+                        <li>
+                            <h6>周邊四星以上美食</h6>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+            <div class="pick_zone col-6 col-md">
+                <button class="btn">
+                </button>
+                <ul class="btn_text">
+                    <a class="list-unstyled text-muted" href="">
+                        <li>
+                            <h5>周邊美食</h5>
+                        </li>
+                        <li>
+                            <h6>周邊四星以上美食</h6>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+        </ul>
+    </div>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script>
+        //scroll effect
+        let lastScroll = 0;
+        $(window).scroll(function () {
+            const scrollDown = $(window).scrollTop();
+            const nowViewHeight = $(window).scrollTop() + $(window).height();
 
-    </script>
-    <script src="./countUp.js"></script>
 
-    <script>
-        $(document).ready(function () {
-            myTargetElement();
+            //console.log(scrollDown);
+            //console.log($('.maintitle').offset().top);
+            //1.先判斷使用者往上或往下滑
 
-            function myTargetElement() {
 
-                var options = {
-                    useEasing: true,
-                    useGrouping: true, //進位
-                    separator: ',',
-                    decimal: '.',
-                    prefix: '', //前面留幾個0
-                    suffix: ''  //後面留幾個0
-                }
+            if (scrollDown > lastScroll) {
+                $('nav').addClass('nav_shadow');
 
-                //開始值,結束值,小數點,執行速度
-                var demo = new countUp("myTargetElement", 0, 8888888888, 0, 2.5, options);
-                demo.start();
+            }
+            else {
+                $('nav').removeClass('nav_shadow');
+
             }
 
-        });
+            //2.更新 lastScroll
+            lastScroll = scrollDown;
+        })
 
-        $(window).mousemove(function (e) {
-            $(".circle").css({ top: e.pageY, left: e.pageX });
-        });
+        //min-height
+        let windowWidth = $(window).width();
+        let imgHeight = $('.imgwrap img').height();
+
+        window.lοad = function () {
+            console.log('img', imgHeight);
+            console.log('window', $(window).width());
+        }
+
+
+
     </script>
-
 </body>
 
 </html>
