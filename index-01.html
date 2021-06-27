@@ -399,8 +399,8 @@
 
 
 
-            console.log(scrollDown);
-            console.log($('.maintitle').offset().top);
+            //console.log(scrollDown);
+            //console.log($('.maintitle').offset().top);
             //1.先判斷使用者往上或往下滑
 
 
@@ -439,27 +439,31 @@
                 $('.summerbase').removeClass('show');
             }
 
-
-
         })
 
-        $(document).ready(function () {
-            myTargetElement();
+        //  只執行一次
 
-            function myTargetElement() {
+        $(window).one('scroll', function () {
 
-                var options = {
-                    useEasing: true,
-                    useGrouping: true, //進位
-                    separator: ',',
-                    decimal: '.',
-                    prefix: '', //前面留幾個0
-                    suffix: ''  //後面留幾個0
+            if ($(window).scrollTop() + $(window).height() >= $('#myTargetElement').offset().top + 300) {
+
+                myTargetElement();
+
+                function myTargetElement() {
+
+                    var options = {
+                        useEasing: true,
+                        useGrouping: true, //進位
+                        separator: ',',
+                        decimal: '.',
+                        prefix: '', //前面留幾個0
+                        suffix: ''  //後面留幾個0
+                    }
+
+                    //開始值,結束值,小數點,執行速度
+                    var demo = new CountUp("myTargetElement", 0, 1130, 0, 2.5, options);
+                    demo.start();
                 }
-
-                //開始值,結束值,小數點,執行速度
-                var demo = new CountUp("myTargetElement", 0, 1130, 0, 2.5, options);
-                demo.start();
             }
 
         });

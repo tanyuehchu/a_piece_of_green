@@ -29,6 +29,34 @@
             <i class="fas fa-stream"></i>
         </div>
     </nav>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+        let lastScroll = 0;
+        $(window).scroll(function () {
+            const scrollDown = $(window).scrollTop();
+            const nowViewHeight = $(window).scrollTop() + $(window).height();
+
+
+            //console.log(scrollDown);
+            //console.log($('.maintitle').offset().top);
+            //1.先判斷使用者往上或往下滑
+
+
+            if (scrollDown > lastScroll) {
+                $('nav').addClass('nav_shadow');
+
+            }
+            else {
+                $('nav').removeClass('nav_shadow');
+
+            }
+
+            //2.更新 lastScroll
+            lastScroll = scrollDown;
+        })
+    </script>
 </body>
 
 </html>

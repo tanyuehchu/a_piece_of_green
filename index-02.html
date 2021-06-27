@@ -32,7 +32,7 @@
             <i class="fas fa-stream"></i>
         </div>
     </nav>
-    <div class="container section-1">
+    <div class="container section-1 pt-5">
         <div class="title">
             <i class="fas fa-map-marker-alt"></i>
             <h5>信義區</h5>
@@ -77,10 +77,10 @@
         <div class="row surrounding justify-content-between align-items-center mt-5">
             <div class="imgwrap col-md-9 col-12">
                 <img id="surrounding-day" src="./img/surounding-map-day.jpg" alt="">
+                <img id="surrounding-night" src="./img/surounding-map-night-04.jpg" alt="">
                 <img src="./img/site_工作區域 4.png" alt="">
                 <img src="./img/market_工作區域 4.png" alt="">
                 <img src="./img/coolest_工作區域 4.png" alt="">
-                <img id="surrounding-night" src="./img/surounding-map-night-04.jpg" alt="">
             </div>
             <ul class="pick_zone_wrap col-md-3 col-12 list-unstyled">
                 <div class="pick_zone col-6 col-md">
@@ -160,10 +160,29 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script>
-        console.log($('.surrounding ').height());
-        let objectHeight = $('.surrounding ').height();
+        let lastScroll = 0;
+        $(window).scroll(function () {
+            const scrollDown = $(window).scrollTop();
+            const nowViewHeight = $(window).scrollTop() + $(window).height();
 
-        $('.surrounding')
+
+            //console.log(scrollDown);
+            //console.log($('.maintitle').offset().top);
+            //1.先判斷使用者往上或往下滑
+
+
+            if (scrollDown > lastScroll) {
+                $('nav').addClass('nav_shadow');
+
+            }
+            else {
+                $('nav').removeClass('nav_shadow');
+
+            }
+
+            //2.更新 lastScroll
+            lastScroll = scrollDown;
+        })
     </script>
 
 </body>
