@@ -106,7 +106,65 @@ ul.photo-demo{
     left:calc(100% - 100px);
     transform: translateX(-50%);
 }
+/* switch btn */
+.switch {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background-color: #FFFEF1;
+    color: rgb(155, 155, 155);
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15%;
+    /* padding: 0.8rem; */
+    cursor: pointer;
+}
 
+.switch::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: scale(1.2);
+    background-color: rgb(192, 192, 192);
+    border-radius: 15%;
+    z-index: -1;
+    transition: all .4s;
+}
+
+
+.switch.click_style:before {
+    transform: translateY(25px) scale(0.6) scaleY(0.8);
+    filter: blur(10px);
+}
+
+
+.switch.switch.change_pseudo::before {
+    background-color: #3e3e5e;
+}
+
+.switch.change {
+    font-size: 1.5rem;
+    color: azure;
+    background-color: #ffffff7a;
+}
+
+.fa-sun.text_color_light {
+    color: rgb(255, 217, 0);
+    text-shadow: 0 0 30px rgb(255, 208, 0);
+}
+.fa-moon{
+    display: none;
+}
+
+.fa-moon.text_color_dark {
+    color: rgb(255, 245, 185);
+    text-shadow: 0 0 30px rgb(214, 214, 214);
+}
 /* ----------------surrounding----------------------- */
 .map-title p{
     position: relative;
