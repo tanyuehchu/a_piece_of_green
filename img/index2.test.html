@@ -10,36 +10,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./index-02-css.css">
+    <link rel="stylesheet" href="./index2.test.css">
     <title>中強公園</title>
 </head>
 
 <body>
-    <nav class="d-flex justify-content-between align-items-center p-2">
-        <div class="logo">
-            <a href="./index-01.html"><img class="w-100" src="./SVG/logo_1.svg" alt=""></a>
-        </div>
-        <div class="navbar ml-auto d-none d-md-inline">
-            <ul class="list-unstyled d-flex text-decoration-none mb-0">
-                <li><a href="">News</a></li>
-                <li><a href="./index-03.html">找公園</a></li>
-                <li><a href="">節慶 x 公園</a></li>
-                <li><a href="">美食 x 公園</a></li>
-                <li><a href=""><i class="fas fa-search p-0"></i></a></li>
-            </ul>
-        </div>
-        <div class="list d-inline d-md-none">
-            <i class="fas fa-stream"></i>
-        </div>
-    </nav>
-    <div class="container section-1 pt-5">
-        <div class="title">
-            <i class="fas fa-map-marker-alt"></i>
-            <h5>信義區</h5>
-            <h1 class="my-3">中強公園</h1>
-            <h4 class="h4-style">Chung Chiang Park</h4>
-        </div>
-    </div>
     <div class="container section-2">
         <div class="row mt-5 text-center">
             <p class="p-3">難得台北信義區也有特色公園，
@@ -82,18 +57,13 @@
         <div class="row surrounding justify-content-between align-items-center mt-5">
             <div class="mapbase col-md-9 col-12">
                 <div class="pngbase">
-                    <img class="surrounding-day" src="./img/surounding-map-day.jpg" alt="">
-                    <img class="surrounding-night" src="./img/surounding-map-night-04.jpg" alt="">
+                    <img class="surrounding-day" src="./surounding-map-day.jpg" alt="">
+                    <img class="surrounding-night" src="./surounding-map-night-04.jpg" alt="">
                 </div>
-                <div class="pngchange day_png">
-                    <img src="./img/site_工作區域 4.png" alt="">
-                    <img src="./img/market_工作區域 4.png" alt="">
-                    <img src="./img/coolest_工作區域 4.png" alt="">
-                </div>
-                <div class="pngchange night_png">
-                    <img src="./img/site_night-04.png" alt="">
-                    <img src="./img/lightest-04.png" alt="">
-                    <img src="./img/darkest-04.png" alt="">
+                <div class="pngchange">
+                    <img src="./site_工作區域 4.png" alt="">
+                    <img src="./market_工作區域 4.png" alt="">
+                    <img src="./coolest_工作區域 4.png" alt="">
                 </div>
             </div>
             <ul class="pick_zone_wrap col-md-3 col-12 list-unstyled">
@@ -248,30 +218,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script>
-        //scroll effect
-        let lastScroll = 0;
-        $(window).scroll(function () {
-            const scrollDown = $(window).scrollTop();
-            const nowViewHeight = $(window).scrollTop() + $(window).height();
 
-
-            //console.log(scrollDown);
-            //console.log($('.maintitle').offset().top);
-            //1.先判斷使用者往上或往下滑
-
-
-            if (scrollDown > lastScroll) {
-                $('nav').addClass('nav_shadow');
-
-            }
-            else {
-                $('nav').removeClass('nav_shadow');
-
-            }
-
-            //2.更新 lastScroll
-            lastScroll = scrollDown;
-        })
 
         //min-height
 
@@ -287,9 +234,6 @@
                 $('.pick_zone_wrap').css("min-height", imgHeight)
             }).resize();
 
-            $('.day_png img').eq(0).css('opacity', '1');
-            $('.day_png img').eq(0).siblings().css('opacity', '0');
-
         })
 
 
@@ -300,18 +244,7 @@
 
             const pickZoneIndex = $(this).index();
 
-            $('.mapbase .day_png img').each(function (index, item) {
-                console.log('.mapbase .pngchange img this index :', $(this).index());
-
-                if (pickZoneIndex == index) {
-                    $(item).css('opacity', '1')
-                }
-                else {
-                    $(item).css('opacity', '0')
-                }
-            })
-
-            $('.mapbase .night_png img').each(function (index, item) {
+            $('.mapbase .pngchange img').each(function (index, item) {
                 console.log('.mapbase .pngchange img this index :', $(this).index());
 
                 if (pickZoneIndex == index) {
@@ -328,39 +261,24 @@
 
         $('#switch').click(function () {
 
-            console.log('hi', $('#surrounding-day').css('opacity') == '0');
+            console.log('hi', $('.day').css('opacity') == '0');
 
-            //  白天
-            if ($('.surrounding-day').css('opacity') == '0') {
-                //白天的stuff打開
+            if ($('.day').css('opacity') == '0') {
                 $('body').removeClass('night_mode');
-                $('.surrounding-day').css('opacity', '1');
+                $('#surrounding-day').css('opacity', '1');
                 $('.day').css('opacity', '1');
-                $('.day_png').css('opacity', '1');
-                $('.day_png img').eq(0).css('opacity', '1');
-
-
-                //晚上的stuff關掉
-                $('.night').css('opacity', '0');
-                $('.night_png').css('opacity', '0');
+                $('.night').css('opacity', '0')
+                $('.pngchange').css('opacity', '1')
             }
-            //  晚上
-            else {
-                //白天的stuff關掉
-                $('body').addClass('night_mode');
-                $('.surrounding-day').css('opacity', '0')
-                $('.day').css('opacity', '0')
-                $('.day_png').css('opacity', '0')
 
-                //晚上的stuff打開
-                $('.surrounding-night').css('opacity', '1')
+            else {
+                $('body').addClass('night_mode');
+                $('#surrounding-day').css('opacity', '0')
                 $('.night').css('opacity', '1');
-                $('.night_png').css('opacity', '1');
-                $('.night_png img').eq(0).css('opacity', '1');
-                $('.night_png img').eq(0).siblings().css('opacity', '0');
+                $('.day').css('opacity', '0')
+                $('.pngchange').css('opacity', '0')
             }
         })
-
 
 
     </script>

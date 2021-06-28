@@ -117,10 +117,6 @@ nav{
     object-fit: contain;
 }
 
-.night_png{
-    opacity: 0;
-}
-
 .mapbase .surrounding-day ,
 .mapbase .pngchange img{
     position: absolute;
@@ -138,10 +134,6 @@ nav{
     position: absolute;
     top: 0;
     left: 1rem;
-}
-
-.pick_zone_wrap .night{
-    opacity: 0;
 }
 
 .pick_zone {

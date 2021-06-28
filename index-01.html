@@ -68,11 +68,11 @@
             <div class="col-12 col-md-6  text">
                 <h5 class="lineheight mt-3 mt-md-0">2016年，台北市實行Re-create Taipei 臺北鄰里公園翻轉計畫，同時間新增規劃了150+處公園綠地。</h5>
                 <h4>直至2021年統計台北市的公園增加了</h4>
-                <div class="numberwrap"><span id="myTargetElement" class="number lightgreen">1,130</span><i
+                <div class="numberwrap"><span id="num1" class="number lightgreen">1,130</span><i
                         class="fas fa-plus lightgreen"></i></div>
                 <h4 class="mt-md-3">每年內在台北大型公園舉辦的活動至少</h4>
                 <div class="numberwrap">
-                    <span class="number lightgreen">800</span>
+                    <span id="num2" class="number lightgreen">800</span>
                     <i class="fas fa-plus lightgreen"></i>
                 </div>
             </div>
@@ -401,6 +401,7 @@
 
             //console.log(scrollDown);
             //console.log($('.maintitle').offset().top);
+
             //1.先判斷使用者往上或往下滑
 
 
@@ -443,9 +444,14 @@
 
         //  只執行一次
 
-        $(window).one('scroll', function () {
+        $(window).on('scroll', function () {
 
-            if ($(window).scrollTop() + $(window).height() >= $('#myTargetElement').offset().top + 300) {
+            console.log('$(window).scrollTop() + $(window).height()', $(window).scrollTop() + $(window).height());
+            console.log('$("#num1").offset().top + 300)', $('#num1').offset().top + 300);
+
+
+            if ($(window).scrollTop() + $(window).height() >= $('#num1').offset().top + 300) {
+
 
                 myTargetElement();
 
@@ -461,12 +467,18 @@
                     }
 
                     //開始值,結束值,小數點,執行速度
-                    var demo = new CountUp("myTargetElement", 0, 1130, 0, 2.5, options);
-                    demo.start();
+                    var num1 = new CountUp("num1", 0, 1130, 0, 2.5, options);
+                    num1.start();
+
+                    var num2 = new CountUp("num2", 0, 800, 0, 2.5, options);
+                    num2.start();
                 }
+                $(window).off('scroll', myTargetElement());
             }
 
         });
+
+
 
 
         //changePage
