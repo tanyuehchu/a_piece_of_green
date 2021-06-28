@@ -31,7 +31,14 @@ nav{
 
 @media (max-width : 375px) {
     .logo{
-        padding-left: 1rem;
-           width: 100px;
-        }
+        padding: 1rem;
+       }
+        .logo img{
+           width: 75%;
+       }
+    
+       .fa-stream{
+           color: rgb(192, 192, 192);
+           font-size: 2rem;
+       }
     }

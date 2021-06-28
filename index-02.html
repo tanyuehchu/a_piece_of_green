@@ -17,7 +17,7 @@
 <body>
     <nav class="d-flex justify-content-between align-items-center p-2">
         <div class="logo">
-            <a href="./index-01.html"><img class="w-100" src="./SVG/logo_1.svg" alt=""></a>
+            <a href="./index-01.html"><img src="./SVG/logo_1.svg" alt=""></a>
         </div>
         <div class="navbar ml-auto d-none d-md-inline">
             <ul class="list-unstyled d-flex text-decoration-none mb-0">
@@ -28,7 +28,7 @@
                 <li><a href=""><i class="fas fa-search p-0"></i></a></li>
             </ul>
         </div>
-        <div class="list d-inline d-md-none">
+        <div class="list d-inline d-md-none mr-5">
             <i class="fas fa-stream"></i>
         </div>
     </nav>
@@ -71,12 +71,14 @@
                 <li></li>
             </ul>
         </div>
+    </div>
+    <div class="container section-3">
 
         <div class="map-title mt-5 text-center text-md-left">
             <h3 class="lineheight2">公園旁邊</h3>
             <p>認識公園從周邊開始(走路 10分鐘距離（1000m）)</p>
         </div>
-        <div class="toggle row justify-content-center  align-items-center py-3">
+        <div class="toggle row justify-content-center  align-items-center pt-5">
             <div id="switch_1" class="switch">
                 <i class="fas fa-sun"></i>
                 <i class="fas fa-moon"></i>
@@ -180,10 +182,10 @@
                         <ul class="btn_text">
                             <a class="list-unstyled text-muted" href="">
                                 <li>
-                                    <h5>我是晚上</h5>
+                                    <h5>周邊美食</h5>
                                 </li>
                                 <li>
-                                    <h6>我是晚上</h6>
+                                    <h6>周邊四星以上美食</h6>
                                 </li>
                             </a>
                         </ul>
@@ -247,17 +249,20 @@
                 </div>
             </ul>
         </div>
-
+    </div>
+    <div class="container section-4">
         <!-- ----------------focus ----------------------->
 
-        <div class="map-title mt-5 text-center text-md-left">
-            <h3 class="lineheight2">公園旁邊</h3>
-            <p>認識公園從周邊開始(走路 10分鐘距離（1000m）)</p>
+        <div class="focus-title mt-5 text-center text-md-right">
+            <h3 class="lineheight2">公園裡面</h3>
+            <p>這個公園裡面有什麼特別？</p>
         </div>
-        <div class="row justify-content-center">
-            <button id="switch_2" class="switch">
-                切換晚上
-            </button>
+        <div class="toggle row justify-content-center  align-items-center pt-5">
+            <div id="switch_2" class="switch">
+                <i class="fas fa-sun"></i>
+                <i class="fas fa-moon"></i>
+            </div>
+            <h6 class="ml-4">切換晚上</h6>
         </div>
         <div class="row focus justify-content-center align-items-center mt-5">
             <div class="mapbase col-md-5 col-10">
@@ -286,24 +291,10 @@
                         <ul class="btn_text">
                             <a class="list-unstyled text-muted" href="">
                                 <li>
-                                    <h5>周邊美食</h5>
+                                    <h5>基本介紹</h5>
                                 </li>
                                 <li>
-                                    <h6>周邊四星以上美食</h6>
-                                </li>
-                            </a>
-                        </ul>
-                    </div>
-                    <div class="pick_zone col-6 col-md">
-                        <button class="btn">
-                        </button>
-                        <ul class="btn_text">
-                            <a class="list-unstyled text-muted" href="">
-                                <li>
-                                    <h5>周邊美食</h5>
-                                </li>
-                                <li>
-                                    <h6>周邊四星以上美食</h6>
+                                    <h6>主要分區有哪些</h6>
                                 </li>
                             </a>
                         </ul>
@@ -314,10 +305,10 @@
                         <ul class="btn_text">
                             <a class="list-unstyled text-muted" href="">
                                 <li>
-                                    <h5>周邊美食</h5>
+                                    <h5>公園裡的樹</h5>
                                 </li>
                                 <li>
-                                    <h6>周邊四星以上美食</h6>
+                                    <h6>公園裡有哪些特別的樹</h6>
                                 </li>
                             </a>
                         </ul>
@@ -328,10 +319,24 @@
                         <ul class="btn_text">
                             <a class="list-unstyled text-muted" href="">
                                 <li>
-                                    <h5>周邊美食</h5>
+                                    <h5>最短捷徑</h5>
                                 </li>
                                 <li>
-                                    <h6>周邊四星以上美食</h6>
+                                    <h6>打籃球要佔場</h6>
+                                </li>
+                            </a>
+                        </ul>
+                    </div>
+                    <div class="pick_zone col-6 col-md">
+                        <button class="btn">
+                        </button>
+                        <ul class="btn_text">
+                            <a class="list-unstyled text-muted" href="">
+                                <li>
+                                    <h5>貓道</h5>
+                                </li>
+                                <li>
+                                    <h6>旁邊居民的餵貓路徑</h6>
                                 </li>
                             </a>
                         </ul>
@@ -425,7 +430,6 @@
                 </div>
             </ul>
         </div>
-
     </div>
     <footer class="d-flex justify-content-center align-items-center py-4">
         <div class="footer text-center">
@@ -439,6 +443,11 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script>
+
+        $(document).ready(function () {
+            $('.title').addClass('title_show')
+        })
+
         //scroll effect
         let lastScroll = 0;
         $(window).scroll(function () {
@@ -462,6 +471,16 @@
 
             //2.更新 lastScroll
             lastScroll = scrollDown;
+
+            console.log('now :', scrollDown);
+
+            if (scrollDown > 266) {
+                $('.section-3').addClass('section3_show')
+            }
+            if (scrollDown > 1181) {
+                $('.section-4').addClass('section4_show')
+            }
+
 
 
 
@@ -640,56 +659,80 @@
         //night
 
 
-        $('.switch').click(function () {
+        $('.switch').on({
 
-            console.log('hi', $('#surrounding-day').css('opacity') == '0');
+            mouseenter: function () {
+                $(this).addClass('click_style');
+                $('.fa-sun').addClass('text_color_light');
+                $('.fa-moon').addClass('text_color_dark');
+            },
 
-            //  白天
-            if ($('.surrounding-day').css('opacity') == '0') {
-                //白天的stuff打開
-                $('.fa-sun').show().addClass('text_color_light')
-                $('body').removeClass('night_mode');
-                $('.surrounding-day').css('opacity', '1');
-                $('.day').css('opacity', '1');
-                $('.day_png').css('opacity', '1');
-                $('.surrounding .day_png img').eq(0).css('opacity', '1');
-                $('.surrounding .day_png img').eq(0).siblings().css('opacity', '0');
-                $('.focus .day_png img').eq(0).css('opacity', '1');
-                $('.focus .day_png img').eq(0).siblings().css('opacity', '0');
+            mouseleave: function () {
+                $(this).removeClass('click_style');
+                $('.fa-sun').removeClass('text_color_light')
+                $('.fa-moon').removeClass('text_color_dark')
+            },
+
+            click: function () {
+
+                console.log('hi', $('#surrounding-day').css('opacity') == '0');
+
+                //  白天
+                if ($('.surrounding-day').css('opacity') == '0') {
+                    //白天的stuff打開
+                    $('.fa-sun').show()
+                    $('body').removeClass('night_mode');
+                    $('.navbar a').css('color', 'rgb(107, 107, 107)')
+                    $('.toggle h6').text('切換晚上')
+                    $('.surrounding-day').css('opacity', '1');
+                    $('.btn').css('background', '#CAFEAA')
+                    $('.btn_text h5').css('color', 'rgb(49, 49, 49)')
+                    $('.day').css('opacity', '1');
+                    $('.day_png').css('opacity', '1');
+                    $('.surrounding .day_png img').eq(0).css('opacity', '1');
+                    $('.surrounding .day_png img').eq(0).siblings().css('opacity', '0');
+                    $('.focus .day_png img').eq(0).css('opacity', '1');
+                    $('.focus .day_png img').eq(0).siblings().css('opacity', '0');
 
 
 
-                //晚上的stuff關掉
+                    //晚上的stuff關掉
 
-                $(this).removeClass('change_pseudo');
-                $(this).removeClass('change')
-                $('.fa-moon').hide().removeClass('text_color_dark')
-                $('nav').removeClass('nav_dark')
-                $('.night').css('opacity', '0');
-                $('.night_png').css('opacity', '0');
-            }
-            //  晚上
-            else {
-                //白天的stuff關掉
+                    $(this).removeClass('change_pseudo');
+                    $(this).removeClass('change')
+                    $('.fa-moon').hide()
+                    $('nav').removeClass('nav_dark')
+                    $('.night').css('opacity', '0');
+                    $('.night_png').css('opacity', '0');
+                }
+                //  晚上
+                else {
+                    //白天的stuff關掉
 
-                $('body').addClass('night_mode');
-                $('.surrounding-day').css('opacity', '0')
-                $('.day').css('opacity', '0')
-                $('.day_png').css('opacity', '0')
-                $('.fa-sun').hide()
+                    $('body').addClass('night_mode');
+                    $('.surrounding-day').css('opacity', '0')
+                    $('.day').css('opacity', '0')
+                    $('.day_png').css('opacity', '0')
+                    $('.fa-sun').hide()
 
-                //晚上的stuff打開
-                $(this).addClass('change_pseudo');
-                $(this).addClass('change')
-                $('.fa-moon').show().addClass('text_color_dark')
-                $('.surrounding-night').css('opacity', '1')
-                $('nav').addClass('nav_dark')
-                $('.night').css('opacity', '1');
-                $('.night_png').css('opacity', '1');
-                $('.surrounding .night_png img').eq(0).css('opacity', '1');
-                $('.surrounding .night_png img').eq(0).siblings().css('opacity', '0');
-                $('.focus .night_png img').eq(0).css('opacity', '1');
-                $('.focus .night_png img').eq(0).siblings().css('opacity', '0');
+                    //晚上的stuff打開
+                    $(this).addClass('change_pseudo');
+                    $(this).addClass('change')
+                    $('.toggle h6').text('切換白天')
+                    $('.fa-moon').show()
+                    $('.surrounding-night').css('opacity', '1')
+                    $('.btn').css('background', '#FFFDCC')
+                    $('.btn_text h5').css('color', 'rgb(214, 214, 214')
+                    $('nav').addClass('nav_dark')
+                    $('.navbar a').css('color', '#fffd9e')
+                    $('.night').css('opacity', '1');
+                    $('.night_png').css('opacity', '1');
+                    $('.surrounding .night_png img').eq(0).css('opacity', '1');
+                    $('.surrounding .night_png img').eq(0).siblings().css('opacity', '0');
+                    $('.focus .night_png img').eq(0).css('opacity', '1');
+                    $('.focus .night_png img').eq(0).siblings().css('opacity', '0');
+                    $('footer').addClass('night_mode')
+                }
             }
         })
 

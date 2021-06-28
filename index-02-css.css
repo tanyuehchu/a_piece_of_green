@@ -36,7 +36,7 @@ nav{
     top: 0;
     left: 0%;
     z-index: 999;
-    transition: .3s;
+    transition: .4s;
 }
 
 nav.nav_shadow{
@@ -46,6 +46,7 @@ nav.nav_shadow{
 
 nav.nav_dark{
     background-color: #3e3e5e;
+    color: rgb(214, 214, 214);
     box-shadow: 0 5px 30px 0 rgb(0 0 0 / 15%); 
 }
 .text{
@@ -57,6 +58,10 @@ nav.nav_dark{
    width: 200px;
 }
 
+.logo img{
+    width: 100%;
+}
+
 .navbar a{
    
     color: rgb(107, 107, 107);
@@ -64,8 +69,15 @@ nav.nav_dark{
 }
 
 .title{
-    margin: 3rem auto 0;
+    margin: 5rem auto 0;
     text-align: center;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 1s cubic-bezier(0.5, 0, 0, 1);
+}
+.title.title_show{
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .fa-map-marker-alt{
@@ -107,6 +119,8 @@ ul.photo-demo{
     transform: translateX(-50%);
 }
 /* switch btn */
+
+
 .switch {
     position: relative;
     width: 60px;
@@ -143,8 +157,8 @@ ul.photo-demo{
 }
 
 
-.switch.switch.change_pseudo::before {
-    background-color: #3e3e5e;
+.switch.change_pseudo::before {
+    background-color: #27273b;
 }
 
 .switch.change {
@@ -162,11 +176,34 @@ ul.photo-demo{
 }
 
 .fa-moon.text_color_dark {
-    color: rgb(255, 245, 185);
+    color: rgb(255, 247, 170);
     text-shadow: 0 0 30px rgb(214, 214, 214);
 }
 /* ----------------surrounding----------------------- */
-.map-title p{
+.section-3 , .section-4{
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 0.5s cubic-bezier(0.5, 0, 0, 1)
+}
+
+.section-4{
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 0.5s cubic-bezier(0.5, 0, 0, 1)
+}
+
+.section-3.section3_show{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.section-4.section4_show{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+.map-title p ,.focus-title p{
     position: relative;
 }
 
@@ -178,6 +215,15 @@ ul.photo-demo{
     right: 15px;    
     position: absolute;
     width: 50%;
+}
+.focus-title p::after{
+    display: inline;
+    border-top: 1px solid rgb(92, 92, 92);
+    content: ' ';
+    top: 10px;
+    right: 30%;    
+    position: absolute;
+    width: 70%;
 }
 
 /* 公園周邊地圖 */
@@ -247,7 +293,8 @@ body.night_mode{
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
-    background-color:#cdfdff;
+    background-color:#CAFEAA;
+    transition: .2s;
         }
 
 .btn_text {
@@ -284,7 +331,32 @@ footer{
 
 @media screen and (max-width: 767px) {
 
+   .logo{
+    padding: 1rem;
+   }
+    .logo img{
+       width: 75%;
+   }
+   .title{
+    padding-top: 3rem;
+    text-align: center;
+}
+
+   .fa-stream{
+       color: rgb(192, 192, 192);
+       font-size: 2rem;
+   }
+   
     .map-title p::after{
+        display: inline;
+        border-top: 1px solid rgb(80, 80, 80);
+        content: ' ';
+        top: 120%;
+        right: 0px;    
+        position: absolute;
+        width: 100%;
+    }
+    .focus-title p::after{
         display: inline;
         border-top: 1px solid rgb(80, 80, 80);
         content: ' ';
