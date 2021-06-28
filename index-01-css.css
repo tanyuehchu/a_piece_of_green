@@ -361,7 +361,7 @@ footer .navbar h5::after{
     width: 400%;
     height: 1px;
     background-color:rgb(92, 92, 92);
-    transition: 2s;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
 }
 
 
