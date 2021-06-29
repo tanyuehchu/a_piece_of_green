@@ -86,15 +86,13 @@ nav.nav_dark{
 }
 
 .carousell{
+    width: 100%;
     position: relative;
     overflow: hidden;
 }
-.carousell ul{
-    display: flex;
-    width: 100%;
-}
 
 ul.photo-demo{
+    display: flex;
     width: 700%;
     height: 100%;
 }
@@ -106,17 +104,15 @@ ul.photo-demo{
 
 
 .slider-dots li {
-    width: 40px;
+    width: 2rem;
     height: 5px;
-    border: 1px solid white;
+    border: 1px solid rgb(255, 255, 255);
     margin: 0 5px;
 }
 
 .slider-dots {
     position: absolute;
     bottom: 10px;
-    left:calc(100% - 100px);
-    transform: translateX(-50%);
 }
 /* switch btn */
 
@@ -181,12 +177,14 @@ ul.photo-demo{
 }
 /* ----------------surrounding----------------------- */
 .section-3 , .section-4{
+    overflow: hidden;
     opacity: 0;
     transform: translateX(-100px);
     transition: all 0.5s cubic-bezier(0.5, 0, 0, 1)
 }
 
 .section-4{
+    overflow: hidden;
     opacity: 0;
     transform: translateX(100px);
     transition: all 0.5s cubic-bezier(0.5, 0, 0, 1)
@@ -231,12 +229,31 @@ ul.photo-demo{
 .mapbase{
     width: 100%;
     position: relative;
+    overflow: hidden;
 }
 
 
 .pngchange img,.pngbase img{
     width: 100%;
     object-fit: contain;
+    transition: all 0.5s cubic-bezier(0.5, 0, 0, 1)
+}
+
+.png-filter{
+    mix-blend-mode:multiply;
+}
+.png-filter-overlay{
+    mix-blend-mode:overlay;
+}
+
+.pngchange img{
+    opacity: 0;
+    transform: translateY(-300px);
+}
+
+.pngchange img.change_animate{
+opacity: 1;
+transform: translateY(0);
 }
 
 .night_png{
@@ -323,6 +340,7 @@ body.night_mode{
 }
 
 footer{
+    width: 100%;
     background-color: #ccc;
 }
 
@@ -341,7 +359,12 @@ footer{
     padding-top: 3rem;
     text-align: center;
 }
-
+.pick_zone_wrap .day,.pick_zone_wrap .night{
+    width:100%;
+    position: absolute;
+    top: 0;
+    left: 1rem;
+}
    .fa-stream{
        color: rgb(192, 192, 192);
        font-size: 2rem;

@@ -444,7 +444,7 @@
 
         //  只執行一次
 
-        $(window).one('scroll', function () {
+        $(window).on('scroll', function () {
 
             console.log('$(window).scrollTop() + $(window).height()', $(window).scrollTop() + $(window).height());
             console.log('$("#num1").offset().top + 300)', $('#num1').offset().top + 300);
@@ -473,7 +473,7 @@
                     var num2 = new CountUp("num2", 0, 800, 0, 2.5, options);
                     num2.start();
                 }
-                // $(window).off('scroll', myTargetElement());
+                $(window).off('scroll', myTargetElement());
             }
 
         });

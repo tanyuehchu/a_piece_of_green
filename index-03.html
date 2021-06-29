@@ -10,6 +10,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="./index-03-css.css">
     <title>A piece of green</title>
 </head>
@@ -18,7 +19,7 @@
 <body>
     <nav class="d-flex justify-content-between align-items-center p-2">
         <div class="logo">
-            <a href="./index-01.html"><img class="w-100" src="./SVG/logo_1.svg" alt=""></a>
+            <a href="./index-01.html"><img src="./SVG/logo_1.svg" alt=""></a>
         </div>
         <div class="navbar ml-auto d-none d-md-inline">
             <ul class="list-unstyled d-flex text-decoration-none mb-0">
@@ -29,17 +30,16 @@
                 <li><a href=""><i class="fas fa-search p-0"></i></a></li>
             </ul>
         </div>
-        <div class="list d-inline d-md-none">
+        <div class="list d-inline d-md-none mr-5">
             <i class="fas fa-stream"></i>
         </div>
     </nav>
-    <header class="jumbotron mt-4" id="header_index">
+    <header class="jumbotron" id="header_index">
         <div class="container">
             <h2 data-0="transform: translateY(-80px);opacity:1" data-500="transform: translateY(100px);opacity:0">
                 選一片屬於自己的綠。</h2>
         </div>
-        <div class="explore" data-0="transform: translateY(-1px);opacity:1"
-            data-500="transform: translateY(100px);opacity:0;">EXPLORE</div>
+        <div class="explore animate__animated">EXPLORE</div>
     </header>
     <section class="ITEMS" id="ITMES">
         <div class="category">
@@ -61,8 +61,8 @@
         </div>
     </section>
     <section class="container park">
-        <div class="row">
-            <div class="col-6 col-md-4 park_item text-md-left text-center">
+        <div class="row row-1">
+            <div class="col-6 col-md-4 park_item  text-md-left text-center">
                 <div class="imgwrap">
                     <a href=""><img src="./img/park-02.jpeg.jpg" alt=""></a>
                 </div>
@@ -92,6 +92,8 @@
                 <p class="ellipsis">
                     從都會野餐綠地變身為孩子遊戲樂園，有極限滑索、煙囪遊戲塔、坡面滑梯、水沙世界、飛天鞦韆等設施。其中「水沙世界」旋轉台吸引愛玩沙的孩子，透過水流經高低沙堡的軌道，打破玩沙不能加水的迷思。</p>
             </div>
+        </div>
+        <div class="row row-2">
             <div class="col-6 col-md-4 park_item text-md-left text-center">
                 <div class="imgwrap">
                     <a href=""><img src="./img/park-08.jpg" alt=""></a>
@@ -120,6 +122,8 @@
                 <p class="ellipsis">
                     位於台北蛋黃區，傾聽在地需求推出的參與式公園，保留自然綠蔭，結合多重路徑攀爬與充滿巧思的貓頭鷹遊戲塔，在面積有限的遊戲場中，不同年齡的孩子互動遊戲，打造生活中的城市美學！</p>
             </div>
+        </div>
+        <div class="row row-3">
             <div class="col-6 col-md-4 park_item text-md-left text-center">
                 <div class="imgwrap">
                     <a href=""><img src="./img/park-13.jpg" alt=""></a>
@@ -150,6 +154,8 @@
                     有45年歷史的興隆公園改造後煥然一新，成為特色鮮明的共融式遊戲場，高低不一的原木組合攀爬、體能吊梯與平衡木樁都很吸睛，一再挑戰孩子的身體能力，其他設施也是平衡力考驗，有旋轉台、旋轉杯、旋轉棒，還有難得一見的森林泰山溜索遊具。
                 </p>
             </div>
+        </div>
+        <div class="row row-4">
             <div class="col-6 col-md-4 park_item text-md-left text-center">
                 <div class="imgwrap">
                     <a href=""><img src="./img/park-05.jpg.jpg" alt=""></a>
@@ -197,6 +203,77 @@
             </p>
         </div>
     </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+        //scroll
+        let lastScroll = 0;
+
+        $(window).scroll(function () {
+            const scrollDown = $(window).scrollTop();
+            const nowViewHeight = $(window).scrollTop() + $(window).height();
+
+
+
+
+            console.log(scrollDown);
+            //console.log($('.maintitle').offset().top);
+
+            //1.先判斷使用者往上或往下滑
+
+
+            if (scrollDown > lastScroll) {
+                $('nav').addClass('nav_shadow');
+                $('.explore').addClass('animate__bounce')
+            }
+            else {
+                $('nav').removeClass('nav_shadow');
+                $('.explore').removeClass('animate__bounce');
+            }
+
+            //2.更新 lastScroll
+            lastScroll = scrollDown;
+
+            if (scrollDown >= 150) {
+
+                $('.row-1 .park_item .imgwrap').addClass('wrap_anmation')
+            }
+
+            if (scrollDown >= 639) {
+
+                $('.row-2 .park_item .imgwrap').addClass('wrap_anmation')
+            }
+            if (scrollDown >= 1109) {
+
+                $('.row-3 .park_item .imgwrap').addClass('wrap_anmation')
+            }
+            if (scrollDown >= 1572) {
+
+                $('.row-4 .park_item .imgwrap').addClass('wrap_anmation')
+            }
+
+        })
+
+
+        //hover
+        $('.category_item').mouseenter(function () {
+            $(this).addClass('hoverstyle');
+        })
+        $('.category_item').mouseleave(function () {
+            $(this).removeClass('hoverstyle');
+        })
+
+        $('.item_line').mouseenter(function () {
+            $(this).addClass('line');
+            $(this).addClass('line2')
+        })
+        $('.item_line').mouseleave(function () {
+            $(this).removeClass('line');
+            $(this).removeClass('line2')
+        })
+    </script>
 </body>
 
 </html>
