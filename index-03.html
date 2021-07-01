@@ -30,9 +30,10 @@
                 <li><a href=""><i class="fas fa-search p-0"></i></a></li>
             </ul>
         </div>
-        <div class="list d-inline d-md-none mr-5">
-            <i class="fas fa-stream"></i>
+        <div class="list d-block d-md-none">
+            <i class="fas fa-stream mr-5"></i>
         </div>
+
     </nav>
     <header class="jumbotron" id="header_index">
         <div class="container">
@@ -82,7 +83,7 @@
                 <h5 class="item_line">中強公園</h5>
                 <p class="ellipsis">以台北樹蛙為主題設計的遊戲場，有複合式遊戲地景的遊戲山，包括樓梯、磨石子滑梯、攀岩與山洞，孩子可以自由攻頂。</p>
             </div>
-            <div class="col-6 col-md-4 park_item text-md-left text-center">
+            <div class="col-12 col-md-4 park_item text-md-left text-center">
                 <div class="imgwrap">
                     <a href=""><img src="./img/park-01.jpeg.jpg" alt=""></a>
                 </div>
@@ -112,7 +113,7 @@
                 <h5 class="item_line">二二八和平公園</h5>
                 <p class="ellipsis">位於天母的東和公園於2017年12月底啟用，是台灣少見結合生態的遊戲場，首座森林遊戲場取名「湯姆森林冒險遊戲場」</p>
             </div>
-            <div class="col-6 col-md-4 park_item text-md-left text-center">
+            <div class="col-12 col-md-4 park_item text-md-left text-center">
                 <div class="imgwrap">
                     <a href=""><img src="./img/park-12.jpg" alt=""></a>
                 </div>
@@ -143,7 +144,7 @@
                 <p class="ellipsis">5,200平方公尺大面積的遊戲場分三區，滑梯、鞦韆、沙坑與攀爬區，還有台灣第一座6人環型鞦韆，邊盪邊聊天！滑梯多達九道，有彎有直還有大坡面滑道，滑梯背面也有攀岩坡。
                 </p>
             </div>
-            <div class="col-6 col-md-4 park_item text-md-left text-center">
+            <div class="col-12 col-md-4 park_item text-md-left text-center">
                 <div class="imgwrap">
                     <a href=""><img src="./img/park-18.jpg" alt=""></a>
                 </div>
@@ -179,7 +180,7 @@
                     富陽自然生態公園又名「富陽公園」、「富陽森林公園」及「富陽自然公園」，官方正式建物編號則為大安408公園。1988年，位於此山頭的聯勤彈藥庫撤離，經整頓與多次改建後，於2006年10月重新開園，並以所在富陽山為名，是為台北市市境內唯一一處自然生態公園。
                 </p>
             </div>
-            <div class="col-6 col-md-4 park_item text-md-left text-center">
+            <div class="col-12 col-md-4 park_item text-md-left text-center">
                 <div class="imgwrap">
                     <a href=""><img src="./img/park-07.jpg.jpg" alt=""></a>
                 </div>
@@ -208,6 +209,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script>
+
+
+
         //scroll
         let lastScroll = 0;
 
@@ -266,12 +270,19 @@
         })
 
         $('.item_line').mouseenter(function () {
-            $(this).addClass('line');
-            $(this).addClass('line2')
+            $(this).addClass('line line2');
         })
         $('.item_line').mouseleave(function () {
-            $(this).removeClass('line');
-            $(this).removeClass('line2')
+            $(this).removeClass('line line2');
+        })
+
+        $('.park_item img').on({
+            mouseenter: function () {
+                $(this).addClass('img-hover');
+            },
+            mouseleave: function () {
+                $(this).removeClass('img-hover');
+            }
         })
     </script>
 </body>

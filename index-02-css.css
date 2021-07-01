@@ -236,22 +236,24 @@ ul.photo-demo{
 .pngchange img,.pngbase img{
     width: 100%;
     object-fit: contain;
-    transition: all 0.5s cubic-bezier(0.5, 0, 0, 1)
 }
 
 .png-filter{
     mix-blend-mode:multiply;
 }
 .png-filter-overlay{
+    opacity: .5;
     mix-blend-mode:overlay;
 }
 
 .pngchange img{
+    z-index: 10;
     opacity: 0;
     transform: translateY(-300px);
 }
 
-.pngchange img.change_animate{
+
+.pngchange .change_animate{
 opacity: 1;
 transform: translateY(0);
 }
@@ -271,10 +273,6 @@ transform: translateY(0);
 .mapbase .surrounding-day{
    z-index: 5;
 }
-.pngchange img{
-    z-index: 10;
-}
-
 
 .pick_zone_wrap{
     width: 100%;
@@ -347,17 +345,21 @@ footer{
 
 /* ---平板RWD---------------------------- */
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
 
    .logo{
     padding: 1rem;
    }
     .logo img{
-       width: 75%;
+       width: 50%;
    }
    .title{
     padding-top: 3rem;
     text-align: center;
+}
+
+.carousell{
+    margin-left: 0;
 }
 .pick_zone_wrap .day,.pick_zone_wrap .night{
     width:100%;
@@ -365,10 +367,19 @@ footer{
     top: 0;
     left: 1rem;
 }
+.pick_zone{
+padding: 1rem 0 0 0;
+}
    .fa-stream{
        color: rgb(192, 192, 192);
-       font-size: 2rem;
+       /* font-size: 2rem; */
    }
+   .section-3 , .section-4{
+    overflow: hidden;
+    opacity: 0;
+    transform: translateX(0);
+    transition: all 0.5s cubic-bezier(0.5, 0, 0, 1)
+}
    
     .map-title p::after{
         display: inline;
@@ -378,6 +389,15 @@ footer{
         right: 0px;    
         position: absolute;
         width: 100%;
+    }
+    .btn{
+        transform: scale(0.8);
+    }
+    .btn_text h5{
+        font-size: 1rem;
+    }
+    .btn_text h6{
+        font-size: 1rem;
     }
     .focus-title p::after{
         display: inline;
@@ -393,6 +413,9 @@ footer{
     .pick_zone_wrap .night{
         display: flex;
         flex-wrap: wrap;
+    }
+    footer{
+        margin-top: 3rem;
     }
 
 

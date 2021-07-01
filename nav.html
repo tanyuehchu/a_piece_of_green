@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -25,14 +28,35 @@
                 <li><a href=""><i class="fas fa-search p-0"></i></a></li>
             </ul>
         </div>
-        <div class="list d-inline d-md-none">
+
+        <div class="list d-block d-md-none">
             <i class="fas fa-stream"></i>
         </div>
+        <div class="drop_down d-block d-md-none">
+            <ul class="navbar flex-column align-items-end list-unstyled text-decoration-none ">
+                <li class="mb-1"><a href=""></a><i class="fas fa-search p-0"></i></a></li>
+                <li><a href="./index-01.html">News</a></li>
+                <li><a href="./index-03.html">找公園</a></li>
+                <li><a href="">節慶 x 公園</a></li>
+                <li><a href="">美食 x 公園</a></li>
+            </ul>
+        </div>
+
     </nav>
 
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script>
+
+        $('.fa-stream').click(function () {
+            $('.drop_down').css('opacity', '1');
+        })
+        $('.fa-search').click(function () {
+            $('.drop_down').css('opacity', '0');
+        })
+
+
+
         let lastScroll = 0;
         $(window).scroll(function () {
             const scrollDown = $(window).scrollTop();
